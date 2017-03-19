@@ -13,7 +13,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
-    @IBOutlet weak var isOrderedLabel: UILabel!
+    @IBOutlet weak var stateLabel: UILabel!
 
     var message: Message?
     
@@ -29,7 +29,7 @@ class DetailViewController: UIViewController {
             nameLabel.text = message.name
             phoneLabel.text = message.phone
             addressLabel.text = message.address
-            isOrderedLabel.text = message.isOrdered
+            stateLabel.text = message.state
         }
     }
 

@@ -13,10 +13,11 @@ import LeanCloud
 class CreateViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
 
     //MARK:Properties
-    @IBOutlet weak var packageTextField: UITextField!
-    @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var phoneTextField: UITextField!
-    @IBOutlet weak var addressTextField: UITextField!
+    @IBOutlet weak var packageNameTextField: UITextField!
+    @IBOutlet weak var describeTextField: UITextField!
+    @IBOutlet weak var timeTextField: UITextField!
+    @IBOutlet weak var remarkTextField: UITextField!
+
 
     @IBOutlet weak var photoImageView: UIImageView!
     
@@ -27,10 +28,10 @@ class CreateViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        packageTextField.delegate = self
-        nameTextField.delegate = self
-        phoneTextField.delegate = self
-        addressTextField.delegate = self
+        packageNameTextField.delegate = self
+        describeTextField.delegate = self
+        timeTextField.delegate = self
+        remarkTextField.delegate = self
         
         updateSaveButtonState()
     }
@@ -76,10 +77,10 @@ class CreateViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     }
     
     func hideKeyboard() {
-        packageTextField.resignFirstResponder()
-        nameTextField.resignFirstResponder()
-        packageTextField.resignFirstResponder()
-        addressTextField.resignFirstResponder()
+        packageNameTextField.resignFirstResponder()
+        describeTextField.resignFirstResponder()
+        timeTextField.resignFirstResponder()
+        remarkTextField.resignFirstResponder()
     }
     
     @IBAction func selectImageFromLibrary(_ sender: UITapGestureRecognizer) {
@@ -93,9 +94,9 @@ class CreateViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         
     }
     //取消按钮的相关
-    @IBAction func cancel(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
-    }
+//    @IBAction func cancel(_ sender: UIBarButtonItem) {
+//        dismiss(animated: true, completion: nil)
+//    }
     
     //Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -108,10 +109,10 @@ class CreateViewController: UIViewController, UITextFieldDelegate, UIImagePicker
             return
         }
         
-        let package = packageTextField.text ?? ""
-        let name = nameTextField.text ?? ""
-        let phone = phoneTextField.text ?? ""
-        let address = addressTextField.text ?? ""
+        let package = packageNameTextField.text ?? ""
+        let describe = describeTextField.text ?? ""
+        let time = timeTextField.text ?? ""
+        let remark = remarkTextField.text ?? ""
         let photo = photoImageView.image
         
         
@@ -119,35 +120,36 @@ class CreateViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         //在这里把数据上传到云端
         let pk = LCObject(className: "Packages")
         pk.set("package", value: package)
-        pk.set("name", value: name)
-        pk.set("phone", value: phone)
-        pk.set("address", value: address)
+        pk.set("describe", value: describe)
+        pk.set("time", value: time)
+        pk.set("remark", value: remark)
    //     pk.set("photo", value: photo as! LCValueConvertible?)
         
         //这个是判定该货物是否被接单
-        let isOrdered = "false"
-        pk.set("isOrdered", value: isOrdered)
+        let state = "未接单"
+        pk.set("state", value: state)
         
         //将当前用户的手机号上传上去
         let currentUser = LCUser.current!
         let founderPhone = currentUser.mobilePhoneNumber?.stringValue
+        let founderAddress = pk.get("address")?.stringValue
         pk.set("founderPhone", value: founderPhone)
         
         pk.save()
         //把唯一对应的id保存起来
         let ID = pk.objectId
         //同时把数据保存到本地
-        self.message = Message(package: package, name: name, founderPhone: founderPhone!, phone: phone, address: address, photo: photo, ID: ID!, isOrdered: isOrdered)
+        self.message = Message(package: package, describe: describe, time: time, remark: remark, name: "", phone: "", address: "", founderPhone: founderPhone!, founderAddress: founderAddress!, courierPhone: "", courierAddress: "", photo: photo, ID: ID!, state: state)
     }
     
     //Private Methods
     private func updateSaveButtonState(){
         //text field为空的时候Save按钮无效
-        let packageText = packageTextField.text ?? ""
-        let phoneText = phoneTextField.text ?? ""
-        let nameText = nameTextField.text ?? ""
-        let addressText = addressTextField.text ?? ""
+        let packageNameText = packageNameTextField.text ?? ""
+        let describeText = describeTextField.text ?? ""
+        let timeText = timeTextField.text ?? ""
+        let remarkText = remarkTextField.text ?? ""
         
-        saveButton.isEnabled = (!packageText.isEmpty && !phoneText.isEmpty && !nameText.isEmpty && !addressText.isEmpty)
+        saveButton.isEnabled = (!packageNameText.isEmpty && !describeText.isEmpty && !timeText.isEmpty && !remarkText.isEmpty)
     }
 }

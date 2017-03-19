@@ -99,9 +99,9 @@ class OrderTableViewController: UITableViewController {
 
     @IBAction func unwindToConfirmButton(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.source as? ConfirmViewController, let message = sourceViewController.message {
-            message.isOrdered = "true"
+            message.state = "已接单"
             let pk = LCObject(className: "Packages", objectId: message.ID)
-            pk.set("isOrdered", value: message.isOrdered)
+            pk.set("state", value: message.state)
             pk.save()
             
             messages.removeAll()
@@ -176,9 +176,9 @@ class OrderTableViewController: UITableViewController {
         let address = message.get("address")?.stringValue
         
         let ID = message.objectId
-        let isOrdered = message.get("isOrdered")?.stringValue
+        let state = message.get("state")?.stringValue
         
-        let message = Message(package: package!, name: name!, founderPhone: founderPhone!, phone: phone!, address: address!, photo: nil, ID: ID!, isOrdered: isOrdered!)
+        let message = Message(package: package!, name: name!, founderPhone: founderPhone!, phone: phone!, address: address!, photo: nil, ID: ID!, state: state!)
         
         return message
     }

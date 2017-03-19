@@ -19,8 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         LeanCloud.initialize(applicationID: "yhCI2E99rNE3QykpJNJd67Qj-gzGzoHsz", applicationKey: "x1IIbS8vszyCpaQ8L8RbPPat")
         
-        UINavigationBar.appearance().barTintColor = UIColor.black
-        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white]
+        UINavigationBar.appearance().barTintColor = UIColor.white
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.black]
         
         return true
     }

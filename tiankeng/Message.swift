@@ -13,13 +13,25 @@ import LeanCloud
 class Message: NSObject {
     
     var package: String
+    var describe: String
+    var time: String
+    var remark: String
+    
     var name: String
-    var founderPhone: String
     var phone: String
     var address: String
+    
+    var founderPhone: String
+    var founderAddress: String
+    
+    var courierPhone: String
+    var courierAddress: String
+    
     var photo: UIImage?
+    
     var ID: LCString
-    var isOrdered: String
+    
+    var state: String
     
 //    //数据存储
 //    struct PropertyKey {
@@ -37,31 +49,29 @@ class Message: NSObject {
 //    static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
 //    static let ArchiveURL = DocumentsDirectory.appendingPathComponent("messages")
     
-    init?(package: String, name: String, founderPhone: String, phone: String, address: String, photo: UIImage?, ID: LCString, isOrdered: String) {
+    init?(package: String, describe: String, time: String, remark: String, name: String, phone: String, address: String, founderPhone: String, founderAddress: String, courierPhone: String, courierAddress: String, photo: UIImage?, ID: LCString, state: String) {
         
-        //确保不是空的
-        guard !package.isEmpty else {
-            return nil
-        }
-        guard !name.isEmpty else {
-            return nil
-        }
-        guard !phone.isEmpty else {
-            return nil
-        }
-        guard !address.isEmpty else {
-            return nil
-        }
 
-        
         self.package = package
+        self.describe = describe
+        self.time = time
+        self.remark = remark
+        
         self.name = name
-        self.founderPhone = founderPhone
         self.phone = phone
         self.address = address
+        
+        self.founderPhone = founderPhone
+        self.founderAddress = founderAddress
+        
+        self.courierPhone = courierPhone
+        self.courierAddress = courierAddress
+        
         self.photo = photo
+        
         self.ID = ID
-        self.isOrdered = isOrdered
+        
+        self.state = state
     }
     
 //    //数据存储 NSCoding的相关函数 实现数据解码和编码

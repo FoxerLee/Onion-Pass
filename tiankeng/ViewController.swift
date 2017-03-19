@@ -69,9 +69,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    //
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return UIStatusBarStyle.default
-    }
+
 }
 

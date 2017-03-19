@@ -74,7 +74,7 @@ class PackageTableViewController: UITableViewController {
         
         cell.packageLabel.text = message.package
         cell.nameLabel.text = message.name
-        cell.phoneLabel.text = message.phone
+        cell.stateLabel.text = message.state
         cell.photoImageView.image = message.photo
         
         return cell
@@ -243,12 +243,11 @@ class PackageTableViewController: UITableViewController {
         let address = message.get("address")?.stringValue
         
         let ID = message.objectId
-        let isOrdered = message.get("isOrdered")?.stringValue
+        let state = message.get("state")?.stringValue
         
-        let message = Message(package: package!, name: name!, founderPhone: founderPhone!, phone: phone!, address: address!, photo: nil, ID: ID!, isOrdered: isOrdered!)
+        let message = Message(package: package!, name: name!, founderPhone: founderPhone!, phone: phone!, address: address!, photo: nil, ID: ID!, state: state!)
         
         return message
     }
-
 
 }

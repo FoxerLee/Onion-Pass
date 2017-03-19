@@ -1,20 +1,20 @@
 //
-//  PackageTableViewCell.swift
+//  PackageCreateTableViewCell.swift
 //  tiankeng
 //
-//  Created by 李源 on 2017/2/9.
+//  Created by 李源 on 2017/3/19.
 //  Copyright © 2017年 foxerlee. All rights reserved.
 //
 
 import UIKit
 
-class PackageTableViewCell: UITableViewCell {
-
+class PackageCreateTableViewCell: UITableViewCell {
     @IBOutlet weak var packageLabel: UILabel!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var stateLabel: UILabel!
+    @IBOutlet weak var describeLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var photoImageView: UIImageView!
-    
+
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
