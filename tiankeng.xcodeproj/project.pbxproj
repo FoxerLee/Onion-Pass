@@ -10,6 +10,7 @@
 		7A076ACB1E6D70E600B9A99C /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A076ACA1E6D70E600B9A99C /* RegisterViewController.swift */; };
 		7A1078CA1E4718550026A90E /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1078C91E4718550026A90E /* MainTabBarController.swift */; };
 		7A1B14E31E54326900326A98 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1B14E21E54326900326A98 /* DetailViewController.swift */; };
+		7A263C1A1E7F811200E7C8A2 /* CreateReceiverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A263C191E7F811200E7C8A2 /* CreateReceiverViewController.swift */; };
 		7A28C47F1E4B03F400A95045 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A28C47E1E4B03F400A95045 /* CreateViewController.swift */; };
 		7A28C4831E4C87EB00A95045 /* PackageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A28C4821E4C87EB00A95045 /* PackageTableViewCell.swift */; };
 		7A3141961E6C3C160056BCEA /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A3141951E6C3C160056BCEA /* ExternalAccessory.framework */; };
@@ -35,6 +36,7 @@
 		7A076ACA1E6D70E600B9A99C /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		7A1078C91E4718550026A90E /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		7A1B14E21E54326900326A98 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		7A263C191E7F811200E7C8A2 /* CreateReceiverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateReceiverViewController.swift; sourceTree = "<group>"; };
 		7A28C47E1E4B03F400A95045 /* CreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
 		7A28C4821E4C87EB00A95045 /* PackageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PackageTableViewCell.swift; sourceTree = "<group>"; };
 		7A3141941E6C3C100056BCEA /* tiankeng.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = tiankeng.entitlements; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 			children = (
 				7A28C47E1E4B03F400A95045 /* CreateViewController.swift */,
 				7A688F141E7EA8AA002AC86A /* CreateTableViewController.swift */,
+				7A263C191E7F811200E7C8A2 /* CreateReceiverViewController.swift */,
 				7A688F1C1E7EC9E9002AC86A /* cell */,
 			);
 			name = create;
@@ -304,6 +307,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A263C1A1E7F811200E7C8A2 /* CreateReceiverViewController.swift in Sources */,
 				7A076ACB1E6D70E600B9A99C /* RegisterViewController.swift in Sources */,
 				7AA42DD31E51556B007E6015 /* PackageTableViewController.swift in Sources */,
 				7A688F191E7EC713002AC86A /* FounderTableViewCell.swift in Sources */,

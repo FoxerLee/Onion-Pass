@@ -9,6 +9,10 @@
 import UIKit
 
 class ReceiverTableViewCell: UITableViewCell {
+    @IBOutlet weak var ReceiverNameLabel: UILabel!
+    @IBOutlet weak var ReceiverPhoneLabel: UILabel!
+    @IBOutlet weak var ReceiverAddressLabel: UILabel!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()

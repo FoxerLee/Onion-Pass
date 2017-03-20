@@ -41,9 +41,7 @@ class CreateViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         
     }
     
-    @IBAction func Savedata(_ sender: UIBarButtonItem) {
-        
-    }
+
 
     //MARK: UITextFieldDelegate
     func textFieldDidBeginEditing(_ textField: UITextField){

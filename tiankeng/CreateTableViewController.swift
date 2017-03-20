@@ -11,7 +11,7 @@ import LeanCloud
 
 class CreateTableViewController: UITableViewController {
 
-    var message: Message?
+    var message: Message!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +45,7 @@ class CreateTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         
-        
+        //货物详情的cell
         if (indexPath.section == 0) {
             let cell = tableView.dequeueReusableCell(withIdentifier: "PackageCreateTableViewCell", for: indexPath) as! PackageCreateTableViewCell
             cell.packageLabel.text = message?.package
@@ -55,13 +55,22 @@ class CreateTableViewController: UITableViewController {
             
             return cell
         }
+        //寄货人的cell
         else if (indexPath.section == 1) {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "FounderTableViewCell", for: indexPath) as! PackageCreateTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "FounderTableViewCell", for: indexPath) as! FounderTableViewCell
+            let currentUser = LCUser.current
+            
+            
+            cell.founderNameLabel.text = currentUser?.username?.stringValue
+            cell.FounderPhoneLabel.text = currentUser?.mobilePhoneNumber?.stringValue
+            cell.founderAddressLabel.text = currentUser?.get("address")?.stringValue
+            //还要加入头像
             
             return cell
         }
+        //收货人的cell
         else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ReceiverTableViewCell", for: indexPath) as! PackageCreateTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ReceiverTableViewCell", for: indexPath) as! ReceiverTableViewCell
             
             return cell
         }
@@ -117,7 +126,10 @@ class CreateTableViewController: UITableViewController {
     @IBAction func unwindToSaveButton(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.source as? CreateViewController, let message = sourceViewController.message {
             
-            self.message = message
+            self.message.package = message.package
+            self.message.describe = message.describe
+            self.message.remark = message.remark
+            self.message.photo = message.photo
         
         }
     }

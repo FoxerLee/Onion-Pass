@@ -144,7 +144,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Y0Y-H1-GRR" id="5xG-49-49t">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="69.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="Uk6-Hb-Q7s">
@@ -329,7 +329,7 @@
         <!--收货人信息-->
         <scene sceneID="DB6-dW-rzI">
             <objects>
-                <viewController id="Sae-aY-2UM" sceneMemberID="viewController">
+                <viewController id="Sae-aY-2UM" customClass="CreateReceiverViewController" customModule="tiankeng" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IBL-4U-4z6"/>
                         <viewControllerLayoutGuide type="bottom" id="c2b-vi-NT7"/>
@@ -404,6 +404,12 @@
                     <navigationItem key="navigationItem" title="收货人信息" id="5fA-Au-CAt">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="HZh-YD-n7C"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="ReceiverAddressTextField" destination="IVn-VY-iNb" id="KXB-TX-uoM"/>
+                        <outlet property="ReceiverNameTextField" destination="GGL-h4-GjJ" id="0YY-M8-HKE"/>
+                        <outlet property="ReceiverPhoneTextField" destination="SVC-Be-QIn" id="mVy-mv-56K"/>
+                        <outlet property="SaveButton" destination="HZh-YD-n7C" id="yhL-ol-rFS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y7O-QI-JhI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -505,7 +511,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IHv-Uk-kWO" id="Ks1-ZM-gdm">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="69.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="niH-G9-5UR">
@@ -547,7 +553,7 @@
                                 <rect key="frame" x="0.0" y="98" width="320" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Htf-yP-jIU" id="qOt-01-NXQ">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="69.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="WIz-0b-fWC">
@@ -588,7 +594,7 @@
                                 <rect key="frame" x="0.0" y="168" width="320" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="t06-9v-rmN" id="fz8-aq-f9Y">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="69.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ReceiverName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YXs-EM-E89">
@@ -615,6 +621,9 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="ReceiverAddressLabel" destination="P5E-dX-9pP" id="VsZ-8d-9vk"/>
+                                    <outlet property="ReceiverNameLabel" destination="YXs-EM-E89" id="h5l-wS-4EM"/>
+                                    <outlet property="ReceiverPhoneLabel" destination="bXt-fs-RbN" id="07I-Uh-iLC"/>
                                     <segue destination="Sae-aY-2UM" kind="show" id="sG1-aO-QOQ"/>
                                 </connections>
                             </tableViewCell>
@@ -661,7 +670,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GFz-DK-UVs" id="wvA-bk-bVo">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="69.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="CXe-KC-I6T">
