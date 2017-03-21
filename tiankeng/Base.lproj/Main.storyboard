@@ -144,7 +144,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Y0Y-H1-GRR" id="5xG-49-49t">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="69.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="Uk6-Hb-Q7s">
@@ -305,7 +305,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="货物详情" id="m31-us-ZHY">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="a80-Ke-ANW"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="a80-Ke-ANW">
+                            <connections>
+                                <segue destination="5mZ-ss-LA2" kind="unwind" unwindAction="unwindToSaveButtonWithSender:" id="kGd-4A-e5X"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="PackageNameTextField" destination="Yb3-Hq-b1M" id="Jva-H8-UWv"/>
@@ -318,6 +322,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vgn-uK-tzL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="5mZ-ss-LA2" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="q1E-Fo-HYR">
                     <connections>
                         <action selector="selectImageFromLibrary:" destination="HQI-YI-ejS" id="Gjg-vT-9m7"/>
@@ -402,7 +407,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="收货人信息" id="5fA-Au-CAt">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="HZh-YD-n7C"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="HZh-YD-n7C">
+                            <connections>
+                                <segue destination="H38-94-lyG" kind="unwind" unwindAction="unwindToSaveReceiverButtonWithSender:" id="deh-FB-bjf"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="ReceiverAddressTextField" destination="IVn-VY-iNb" id="KXB-TX-uoM"/>
@@ -412,8 +421,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y7O-QI-JhI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="H38-94-lyG" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4059" y="-1262"/>
+            <point key="canvasLocation" x="4024" y="-993"/>
         </scene>
         <!--查看货物-->
         <scene sceneID="cg9-Ft-oUL">
@@ -502,16 +512,16 @@
         <scene sceneID="D6p-6c-Nsp">
             <objects>
                 <tableViewController id="eWP-6z-0eV" customClass="CreateTableViewController" customModule="tiankeng" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="rwL-6l-GVW">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="70" sectionHeaderHeight="18" sectionFooterHeight="18" id="rwL-6l-GVW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PackageCreateTableViewCell" rowHeight="70" id="IHv-Uk-kWO" customClass="PackageCreateTableViewCell" customModule="tiankeng" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="320" height="70"/>
+                                <rect key="frame" x="0.0" y="56" width="320" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IHv-Uk-kWO" id="Ks1-ZM-gdm">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="69.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="niH-G9-5UR">
@@ -550,10 +560,10 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FounderTableViewCell" rowHeight="70" id="Htf-yP-jIU" customClass="FounderTableViewCell" customModule="tiankeng" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="98" width="320" height="70"/>
+                                <rect key="frame" x="0.0" y="126" width="320" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Htf-yP-jIU" id="qOt-01-NXQ">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="69.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="WIz-0b-fWC">
@@ -591,10 +601,10 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReceiverTableViewCell" rowHeight="70" id="t06-9v-rmN" customClass="ReceiverTableViewCell" customModule="tiankeng" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="168" width="320" height="70"/>
+                                <rect key="frame" x="0.0" y="196" width="320" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="t06-9v-rmN" id="fz8-aq-f9Y">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="69.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ReceiverName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YXs-EM-E89">
@@ -634,10 +644,23 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="发布货物" id="EXd-0k-pKL">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="hrw-Ro-o1N"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="hrw-Ro-o1N">
+                            <connections>
+                                <action selector="cancel:" destination="eWP-6z-0eV" id="mvC-og-mkW"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="GEa-Hf-iuJ">
+                            <connections>
+                                <segue destination="PDk-SN-Ynk" kind="unwind" unwindAction="unwindToPackageMessageWithSender:" id="X4D-ni-gfJ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="saveButton" destination="GEa-Hf-iuJ" id="YX3-xn-JJZ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n0W-RI-oBA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="PDk-SN-Ynk" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3183.75" y="-1539.0845070422536"/>
         </scene>
@@ -670,7 +693,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GFz-DK-UVs" id="wvA-bk-bVo">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="69.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="CXe-KC-I6T">

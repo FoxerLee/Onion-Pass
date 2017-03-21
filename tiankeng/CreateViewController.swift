@@ -116,28 +116,28 @@ class CreateViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         
         
         //在这里把数据上传到云端
-        let pk = LCObject(className: "Packages")
-        pk.set("package", value: package)
-        pk.set("describe", value: describe)
-        pk.set("time", value: time)
-        pk.set("remark", value: remark)
+        //let pk = LCObject(className: "Packages")
+//        pk.set("package", value: package)
+//        pk.set("describe", value: describe)
+//        pk.set("time", value: time)
+//        pk.set("remark", value: remark)
    //     pk.set("photo", value: photo as! LCValueConvertible?)
         
         //这个是判定该货物是否被接单
         let state = "未接单"
-        pk.set("state", value: state)
+//        pk.set("state", value: state)
         
-        //将当前用户的手机号上传上去
+        //将寄货人信息保存到本地
         let currentUser = LCUser.current!
         let founderPhone = currentUser.mobilePhoneNumber?.stringValue
-        let founderAddress = pk.get("address")?.stringValue
-        pk.set("founderPhone", value: founderPhone)
+        let founderAddress = currentUser.get("address")?.stringValue
+        //pk.set("founderPhone", value: founderPhone)
         
-        pk.save()
+        //pk.save()
         //把唯一对应的id保存起来
-        let ID = pk.objectId
+        //let ID = pk.objectId
         //同时把数据保存到本地
-        self.message = Message(package: package, describe: describe, time: time, remark: remark, name: "", phone: "", address: "", founderPhone: founderPhone!, founderAddress: founderAddress!, courierPhone: "", courierAddress: "", photo: photo, ID: ID!, state: state)
+        self.message = Message(package: package, describe: describe, time: time, remark: remark, name: "", phone: "", address: "", founderPhone: founderPhone!, founderAddress: founderAddress, courierPhone: "", courierAddress: "", photo: photo, ID: "", state: state)
     }
     
     //Private Methods

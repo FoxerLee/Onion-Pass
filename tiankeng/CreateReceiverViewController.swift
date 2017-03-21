@@ -57,6 +57,11 @@ class CreateReceiverViewController: UIViewController, UITextFieldDelegate {
             os_log("The save button was not pressed, canceiling", log:OSLog.default, type: .debug)
             return
         }
+        let receiverName = ReceiverNameTextField.text
+        let receiverPhone = ReceiverPhoneTextField.text
+        let receiverAddress = ReceiverAddressTextField.text
+        
+        self.message = Message(package: "", describe: "", time: "", remark: "", name: receiverName!, phone: receiverPhone!, address: receiverAddress!, founderPhone: "", founderAddress: "", courierPhone: "", courierAddress: "", photo: nil, ID: "", state: "")
         
         
     }

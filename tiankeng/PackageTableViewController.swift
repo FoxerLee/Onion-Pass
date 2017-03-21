@@ -37,6 +37,8 @@ class PackageTableViewController: UITableViewController {
 //                }
 //            }
 //        }
+        
+        //刷新
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(PackageTableViewController.reload), for: UIControlEvents.valueChanged)
         refreshControl.attributedTitle = NSAttributedString(string: "reloading")
@@ -89,7 +91,7 @@ class PackageTableViewController: UITableViewController {
             
             
             //在leancloud中删除数据
-            query.whereKey("objectId", .equalTo(message.ID))
+            query.whereKey("objectId", .equalTo(message.ID!))
             query.find { result in
                 switch result {
                 case .success(let objects):
@@ -210,7 +212,7 @@ class PackageTableViewController: UITableViewController {
     private func loadMessages(){
         let query = LCQuery(className: "Packages")
         //读取到的数据无论是否接单的，都要有
-        //query.whereKey("isOrdered", .equalTo(false))
+        
         
         //发布的单的数量
         var counts = query.count().intValue
@@ -229,7 +231,6 @@ class PackageTableViewController: UITableViewController {
             if (message?.founderPhone == founderPhone) {
                 messages.append(message!)
             }
-//            self.messages.append(message!)
         }
     }
     
@@ -237,15 +238,24 @@ class PackageTableViewController: UITableViewController {
     private func cloudToLocal(message: LCObject) -> Message? {
         //狗屎，这个搞了半天
         let package = message.get("package")?.stringValue
+        let describe = message.get("describe")?.stringValue
+        let time = message.get("time")?.stringValue
+        let remark = message.get("remark")?.stringValue
+        
+        
+        
         let name = message.get("name")?.stringValue
-        let founderPhone = message.get("founderPhone")?.stringValue
         let phone = message.get("phone")?.stringValue
         let address = message.get("address")?.stringValue
+        
+        let founderPhone = message.get("founderPhone")?.stringValue
+        
+        let courierPhone = message.get("courierPhone")?.stringValue
         
         let ID = message.objectId
         let state = message.get("state")?.stringValue
         
-        let message = Message(package: package!, name: name!, founderPhone: founderPhone!, phone: phone!, address: address!, photo: nil, ID: ID!, state: state!)
+        let message = Message(package: package, describe: describe, time: time, remark: remark, name: name, phone: phone, address: address, founderPhone: founderPhone!, founderAddress: "", courierPhone: courierPhone, courierAddress: "", photo: nil, ID: ID!, state: state)
         
         return message
     }

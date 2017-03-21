@@ -12,26 +12,26 @@ import LeanCloud
 
 class Message: NSObject {
     
-    var package: String
-    var describe: String
-    var time: String
-    var remark: String
+    var package: String?
+    var describe: String?
+    var time: String?
+    var remark: String?
     
-    var name: String
-    var phone: String
-    var address: String
+    var name: String?
+    var phone: String?
+    var address: String?
     
     var founderPhone: String
-    var founderAddress: String
+    var founderAddress: String?
     
-    var courierPhone: String
-    var courierAddress: String
+    var courierPhone: String?
+    var courierAddress: String?
     
     var photo: UIImage?
     
-    var ID: LCString
+    var ID: LCString?
     
-    var state: String
+    var state: String?
     
 //    //数据存储
 //    struct PropertyKey {
@@ -49,7 +49,7 @@ class Message: NSObject {
 //    static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
 //    static let ArchiveURL = DocumentsDirectory.appendingPathComponent("messages")
     
-    init?(package: String, describe: String, time: String, remark: String, name: String, phone: String, address: String, founderPhone: String, founderAddress: String, courierPhone: String, courierAddress: String, photo: UIImage?, ID: LCString, state: String) {
+    init?(package: String?, describe: String?, time: String?, remark: String?, name: String?, phone: String?, address: String?, founderPhone: String, founderAddress: String?, courierPhone: String?, courierAddress: String?, photo: UIImage?, ID: LCString, state: String?) {
         
 
         self.package = package
