@@ -9,6 +9,7 @@
 import UIKit
 import os
 import LeanCloud
+import AVOSCloud
 
 class OrderTableViewController: UITableViewController {
 
@@ -145,49 +146,48 @@ class OrderTableViewController: UITableViewController {
         refreshControl?.endRefreshing()
     }
  
-    private func loadMessages(){
-        let query = LCQuery(className: "Packages")
+    private func loadMessages() {
+        let query = AVQuery(className: "Packages")
         //读取到的数据都是没有接单的
-        query.whereKey("state", .equalTo("未接单"))
+        query.whereKey("state", equalTo: "未接单")
+        //发布的单的数量
+        var counts = query.countObjects()
+        var allMessages = query.findObjects()
         
-        //满足的未接单的数量
-        var counts = query.count().intValue
-        //相当于一个保存了所有数据的数组
-        var allMessages = query.find().objects!
-            while (counts > 0) {
-                //逐个读取
-                let cloudMessage = allMessages.last
-                allMessages.popLast()
-                counts -= 1
-                
-                let message = self.cloudToLocal(message: cloudMessage!)
-                
-                self.messages.append(message!)
+        while (counts > 0) {
+            let cloudMessage = allMessages?.popLast()
+            counts -= 1
+            
+            let message = self.cloudToLocal(message: cloudMessage! as! AVObject)
+            let currentUser = LCUser.current
+            let founderPhone = currentUser?.mobilePhoneNumber?.stringValue
+            if ( message?.founderPhone == founderPhone) {
+                messages.append(message!)
             }
+            
+        }
+        
     }
     
     //自己定义一个函数，把leancloud上的LCObject变成我本地的Message形式
-    private func cloudToLocal(message: LCObject) -> Message? {
-        //狗屎，这个搞了半天
-        let package = message.get("package")?.stringValue
-        let describe = message.get("describe")?.stringValue
-        let time = message.get("time")?.stringValue
-        let remark = message.get("remark")?.stringValue
+    private func cloudToLocal(message: AVObject) -> Message? {
+        let package = message.object(forKey: "package") as! String
+        let describe = message.object(forKey: "describe") as! String
+        let time = message.object(forKey: "time") as! String
+        let remark = message.object(forKey: "remark") as! String
         
+        let name = message.object(forKey: "name") as! String
+        let phone = message.object(forKey: "phone") as! String
+        let address = message.object(forKey: "address") as! String
         
+        let founderPhone = message.object(forKey: "founderPhone") as! String
         
-        let name = message.get("name")?.stringValue
-        let phone = message.get("phone")?.stringValue
-        let address = message.get("address")?.stringValue
+        let courierPhone = message.object(forKey: "courierPhone") as? String
         
-        let founderPhone = message.get("founderPhone")?.stringValue
+        let ID = message.objectId!
+        let state = message.object(forKey: "state") as! String
         
-        let courierPhone = message.get("courierPhone")?.stringValue
-        
-        let ID = message.objectId
-        let state = message.get("state")?.stringValue
-        
-        let message = Message(package: package, describe: describe, time: time, remark: remark, name: name, phone: phone, address: address, founderPhone: founderPhone!, founderAddress: "", courierPhone: courierPhone, courierAddress: "", photo: nil, ID: ID!, state: state!)
+        let message = Message(package: package, describe: describe, time: time, remark: remark, name: name, phone: phone, address: address, founderPhone: founderPhone, founderAddress: "", courierPhone: courierPhone, courierAddress: "", photo: nil, ID: ID, state: state)
         
         return message
     }

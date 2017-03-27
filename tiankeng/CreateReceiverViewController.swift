@@ -8,7 +8,7 @@
 
 import UIKit
 import os.log
-import LeanCloud
+
 
 class CreateReceiverViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var ReceiverNameTextField: UITextField!

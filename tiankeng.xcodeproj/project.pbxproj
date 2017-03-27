@@ -41,6 +41,7 @@
 		7A28C4821E4C87EB00A95045 /* PackageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PackageTableViewCell.swift; sourceTree = "<group>"; };
 		7A3141941E6C3C100056BCEA /* tiankeng.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = tiankeng.entitlements; sourceTree = "<group>"; };
 		7A3141951E6C3C160056BCEA /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
+		7A341C8C1E81060C007DCA63 /* tiankeng-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "tiankeng-Bridging-Header.h"; sourceTree = "<group>"; };
 		7A688F141E7EA8AA002AC86A /* CreateTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTableViewController.swift; sourceTree = "<group>"; };
 		7A688F161E7EB853002AC86A /* PackageCreateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PackageCreateTableViewCell.swift; sourceTree = "<group>"; };
 		7A688F181E7EC713002AC86A /* FounderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FounderTableViewCell.swift; sourceTree = "<group>"; };
@@ -162,6 +163,7 @@
 				7AA42DD01E51515D007E6015 /* Message.swift */,
 				7AD81E1C1E45945500D0BD28 /* Assets.xcassets */,
 				7AD81E211E45945500D0BD28 /* Info.plist */,
+				7A341C8C1E81060C007DCA63 /* tiankeng-Bridging-Header.h */,
 			);
 			path = tiankeng;
 			sourceTree = "<group>";
@@ -212,6 +214,7 @@
 					7AD81E111E45945500D0BD28 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = J862SDJ6XM;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.DataProtection = {
@@ -437,6 +440,7 @@
 			baseConfigurationReference = 226B2CAD42F1240CE204A392 /* Pods-tiankeng.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = tiankeng/tiankeng.entitlements;
 				DEVELOPMENT_TEAM = J862SDJ6XM;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -447,6 +451,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = foxerlee.tiankeng;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "tiankeng/tiankeng-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -456,6 +462,7 @@
 			baseConfigurationReference = 5F9046D84E5345A0BE0EDB8E /* Pods-tiankeng.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = tiankeng/tiankeng.entitlements;
 				DEVELOPMENT_TEAM = J862SDJ6XM;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -466,6 +473,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = foxerlee.tiankeng;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "tiankeng/tiankeng-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

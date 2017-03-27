@@ -29,7 +29,7 @@ class Message: NSObject {
     
     var photo: UIImage?
     
-    var ID: LCString?
+    var ID: String?
     
     var state: String?
     
@@ -49,7 +49,7 @@ class Message: NSObject {
 //    static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
 //    static let ArchiveURL = DocumentsDirectory.appendingPathComponent("messages")
     
-    init?(package: String?, describe: String?, time: String?, remark: String?, name: String?, phone: String?, address: String?, founderPhone: String, founderAddress: String?, courierPhone: String?, courierAddress: String?, photo: UIImage?, ID: LCString, state: String?) {
+    init?(package: String?, describe: String?, time: String?, remark: String?, name: String?, phone: String?, address: String?, founderPhone: String, founderAddress: String?, courierPhone: String?, courierAddress: String?, photo: UIImage?, ID: String, state: String?) {
         
 
         self.package = package

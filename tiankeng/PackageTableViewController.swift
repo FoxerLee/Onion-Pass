@@ -9,6 +9,7 @@
 import UIKit
 import os.log
 import LeanCloud
+import AVOSCloud
 
 class PackageTableViewController: UITableViewController {
 
@@ -20,23 +21,6 @@ class PackageTableViewController: UITableViewController {
 
         self.navigationItem.leftBarButtonItem = self.editButtonItem
         self.editButtonItem.title = "确认送达"
-
-//        let currentUser = LCUser.current!
-//        let founderPhone = currentUser.mobilePhoneNumber?.stringValue
-        
-//        //加载任何保存了的数据
-//        if var savedMessages = loadMessages() {
-//            var counts = savedMessages.count
-//            while (counts > 0){
-//                let message = savedMessages.last
-//                savedMessages.popLast()
-//                counts -= 1
-//                //为了保证显示出来的数据是当前使用者发布的
-//                if (message?.founderPhone == founderPhone) {
-//                    messages.append(message!)
-//                }
-//            }
-//        }
         
         //刷新
         let refreshControl = UIRefreshControl()
@@ -164,7 +148,7 @@ class PackageTableViewController: UITableViewController {
     
     //添加新的一个cell
     @IBAction func unwindToPackageMessage(sender: UIStoryboardSegue){
-        if let sourceViewController = sender.source as? CreateViewController, let message = sourceViewController.message {
+        if let sourceViewController = sender.source as? CreateTableViewController, let message = sourceViewController.message {
             
             if let selectedIndexPath = tableView.indexPathForSelectedRow {
                 //加载已经存在的
@@ -209,55 +193,103 @@ class PackageTableViewController: UITableViewController {
 //        return NSKeyedUnarchiver.unarchiveObject(withFile: Message.ArchiveURL.path) as? [Message]
 //    }
     
-    private func loadMessages(){
-        let query = LCQuery(className: "Packages")
+//    private func loadMessages(){
+//        let query = LCQuery(className: "Packages")
+//        //读取到的数据无论是否接单的，都要有
+//        
+//        
+//        //发布的单的数量
+//        var counts = query.count().intValue
+//        //相当于一个保存了所有数据的数组
+//        var allMessages = query.find().objects!
+//        while (counts > 0) {
+//            //逐个读取
+//            let cloudMessage = allMessages.last
+//            allMessages.popLast()
+//            counts -= 1
+//            
+//            let message = self.cloudToLocal(message: cloudMessage!)
+//            
+//            let currentUser = LCUser.current!
+//            let founderPhone = currentUser.mobilePhoneNumber?.stringValue
+//            if (message?.founderPhone == founderPhone) {
+//                messages.append(message!)
+//            }
+//        }
+//    }
+    private func loadMessages() {
+        let query = AVQuery(className: "Packages")
         //读取到的数据无论是否接单的，都要有
         
-        
         //发布的单的数量
-        var counts = query.count().intValue
-        //相当于一个保存了所有数据的数组
-        var allMessages = query.find().objects!
+        var counts = query.countObjects()
+        var allMessages = query.findObjects()
+        
         while (counts > 0) {
-            //逐个读取
-            let cloudMessage = allMessages.last
-            allMessages.popLast()
+            let cloudMessage = allMessages?.popLast()
             counts -= 1
             
-            let message = self.cloudToLocal(message: cloudMessage!)
-            
-            let currentUser = LCUser.current!
-            let founderPhone = currentUser.mobilePhoneNumber?.stringValue
+            let message = self.cloudToLocal(message: cloudMessage! as! AVObject)
+            let currentUser = LCUser.current
+            let founderPhone = currentUser?.mobilePhoneNumber?.stringValue
             if (message?.founderPhone == founderPhone) {
                 messages.append(message!)
             }
+            
         }
+        
     }
-    
     //自己定义一个函数，把leancloud上的LCObject变成我本地的Message形式
-    private func cloudToLocal(message: LCObject) -> Message? {
+//    private func cloudToLocal(message: LCObject) -> Message? {
         //狗屎，这个搞了半天
-        let package = message.get("package")?.stringValue
-        let describe = message.get("describe")?.stringValue
-        let time = message.get("time")?.stringValue
-        let remark = message.get("remark")?.stringValue
+//        let package = message.get("package")?.stringValue
+//        let describe = message.get("describe")?.stringValue
+//        let time = message.get("time")?.stringValue
+//        let remark = message.get("remark")?.stringValue
+//        
+//        
+//        
+//        let name = message.get("name")?.stringValue
+//        let phone = message.get("phone")?.stringValue
+//        let address = message.get("address")?.stringValue
+//        
+//        let founderPhone = message.get("founderPhone")?.stringValue
+//        
+//        let courierPhone = message.get("courierPhone")?.stringValue
+//        
+//        let ID = message.objectId
+//        let state = message.get("state")?.stringValue
+//        
+//        let message = Message(package: package, describe: describe, time: time, remark: remark, name: name, phone: phone, address: address, founderPhone: founderPhone!, founderAddress: "", courierPhone: courierPhone, courierAddress: "", photo: nil, ID: ID!, state: state)
+//        
+//        return message
+//    }
+    //自己定义一个函数，把leancloud上的AVObject变成我本地的Message形式
+    private func cloudToLocal(message: AVObject) -> Message? {
+        let package = message.object(forKey: "package") as! String
+        let describe = message.object(forKey: "describe") as! String
+        let time = message.object(forKey: "time") as! String
+        let remark = message.object(forKey: "remark") as! String
+        
+        let name = message.object(forKey: "name") as! String
+        let phone = message.object(forKey: "phone") as! String
+        let address = message.object(forKey: "address") as! String
+        
+        //
+        let file = message.object(forKey: "photo") as? AVFile
+        let data = file?.getData()
+        let photo = UIImage(data: data!)
         
         
+        let founderPhone = message.object(forKey: "founderPhone") as! String
         
-        let name = message.get("name")?.stringValue
-        let phone = message.get("phone")?.stringValue
-        let address = message.get("address")?.stringValue
+        let courierPhone = message.object(forKey: "courierPhone") as? String
         
-        let founderPhone = message.get("founderPhone")?.stringValue
+        let ID = message.objectId!
+        let state = message.object(forKey: "state") as! String
         
-        let courierPhone = message.get("courierPhone")?.stringValue
-        
-        let ID = message.objectId
-        let state = message.get("state")?.stringValue
-        
-        let message = Message(package: package, describe: describe, time: time, remark: remark, name: name, phone: phone, address: address, founderPhone: founderPhone!, founderAddress: "", courierPhone: courierPhone, courierAddress: "", photo: nil, ID: ID!, state: state)
+        let message = Message(package: package, describe: describe, time: time, remark: remark, name: name, phone: phone, address: address, founderPhone: founderPhone, founderAddress: "", courierPhone: courierPhone, courierAddress: "", photo: photo, ID: ID, state: state)
         
         return message
     }
-
 }

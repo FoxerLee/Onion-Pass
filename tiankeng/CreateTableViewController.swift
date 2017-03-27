@@ -9,18 +9,18 @@
 import UIKit
 import os.log
 import LeanCloud
+import AVOSCloud
 
 class CreateTableViewController: UITableViewController {
     @IBOutlet weak var saveButton: UIBarButtonItem!
 
     var message: Message!
-    let pk = LCObject(className: "Packages")
-    
+    let pk = AVObject(className: "Packages")
     override func viewDidLoad() {
         super.viewDidLoad()
 
         
-        let section = ["货物详情", "寄货人信息", "送货人信息"]
+        //let section = ["货物详情", "寄货人信息", "送货人信息"]
         let currentUser = LCUser.current
         let founderPhone = currentUser?.mobilePhoneNumber?.stringValue
         
@@ -28,6 +28,7 @@ class CreateTableViewController: UITableViewController {
         
         message = Message(package: "", describe: "", time: "", remark: "", name: "", phone: "", address: "", founderPhone: founderPhone!, founderAddress: "", courierPhone: "", courierAddress: "", photo: nil, ID: "", state: "")
         
+        updateSaveButtonState()
     }
 
     override func didReceiveMemoryWarning() {
@@ -139,20 +140,38 @@ class CreateTableViewController: UITableViewController {
             return
         }
         
-        pk.set("package", value: message.package)
-        pk.set("describe", value: message.describe)
-        pk.set("time", value: message.time)
-        pk.set("remark", value: message.remark)
+        let data = UIImagePNGRepresentation(message.photo!)
+        let photo = AVFile.init(data: data!)
+
+        pk.setObject(message.package!, forKey: "package")
+        pk.setObject(message.describe!, forKey: "describe")
+        pk.setObject(message.time!, forKey: "time")
+        pk.setObject(message.remark!, forKey: "remark")
         
-        pk.set("state", value: message.state)
+        pk.setObject(message.state!, forKey: "state")
         
-        pk.set("name", value: message.name)
-        pk.set("phone", value: message.phone)
-        pk.set("address", value: message.address)
+        pk.setObject(message.name!, forKey: "name")
+        pk.setObject(message.phone!, forKey: "phone")
+        pk.setObject(message.address!, forKey: "address")
         
-        pk.set("founderPhone", value: message.founderPhone)
-        pk.save()
-        
+        pk.setObject(message.founderPhone, forKey: "founderPhone")
+        pk.setObject(photo, forKey: "photo")
+        //pk.set("package", value: message.package)
+        //pk.set("describe", value: message.describe)
+        //pk.set("time", value: message.time)
+        //pk.set("remark", value: message.remark)
+        //
+//        //pk.set("state", value: message.state)
+//            
+//        pk.set("name", value: message.name)
+        //pk.set("phone", value: message.phone)
+        //pk.set("address", value: message.address)
+            
+        //pk.set("founderPhone", value: message.founderPhone)
+     //   pk.set("photo", value: photo)
+            
+        pk.saveInBackground()
+
     }
     
 
@@ -165,16 +184,31 @@ class CreateTableViewController: UITableViewController {
                 self.message.remark = message.remark
                 self.message.photo = message.photo
                 
+                self.message.state = message.state
                 tableView.reloadRows(at: [selectedIndexPath], with: .none)
             }
+            
+            updateSaveButtonState()
         }
     }
     
     @IBAction func unwindToSaveReceiverButton(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.source as? CreateReceiverViewController, let message = sourceViewController.message {
-            self.message.name = message.name
-            self.message.phone = message.phone
-            self.message.address = message.address
+            if let selectedIndexPath = tableView.indexPathForSelectedRow {
+                self.message.name = message.name
+                self.message.phone = message.phone
+                self.message.address = message.address
+            
+                tableView.reloadRows(at: [selectedIndexPath], with: .none)
+            }
         }
+        
+        updateSaveButtonState()
+    }
+    
+    private func updateSaveButtonState() {
+      
+        saveButton.isEnabled = (!(message.package?.isEmpty)! && !(message.describe?.isEmpty)! && !(message.time?.isEmpty)! && !(message.remark?.isEmpty)! && !(message.name?.isEmpty)! && !(message.phone?.isEmpty)! && !(message.address?.isEmpty)!)
+
     }
 }
