@@ -18,6 +18,7 @@
 		7A688F171E7EB853002AC86A /* PackageCreateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A688F161E7EB853002AC86A /* PackageCreateTableViewCell.swift */; };
 		7A688F191E7EC713002AC86A /* FounderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A688F181E7EC713002AC86A /* FounderTableViewCell.swift */; };
 		7A688F1B1E7EC734002AC86A /* ReceiverTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A688F1A1E7EC734002AC86A /* ReceiverTableViewCell.swift */; };
+		7A868D381E8E3C1E00F38D3D /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A868D371E8E3C1E00F38D3D /* DetailTableViewController.swift */; };
 		7AA42DD11E51515D007E6015 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA42DD01E51515D007E6015 /* Message.swift */; };
 		7AA42DD31E51556B007E6015 /* PackageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA42DD21E51556B007E6015 /* PackageTableViewController.swift */; };
 		7AD81E161E45945500D0BD28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD81E151E45945500D0BD28 /* AppDelegate.swift */; };
@@ -46,6 +47,7 @@
 		7A688F161E7EB853002AC86A /* PackageCreateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PackageCreateTableViewCell.swift; sourceTree = "<group>"; };
 		7A688F181E7EC713002AC86A /* FounderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FounderTableViewCell.swift; sourceTree = "<group>"; };
 		7A688F1A1E7EC734002AC86A /* ReceiverTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiverTableViewCell.swift; sourceTree = "<group>"; };
+		7A868D371E8E3C1E00F38D3D /* DetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
 		7AA42DD01E51515D007E6015 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		7AA42DD21E51556B007E6015 /* PackageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PackageTableViewController.swift; sourceTree = "<group>"; };
 		7AD81E121E45945500D0BD28 /* tiankeng.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tiankeng.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,6 +123,13 @@
 			name = cell;
 			sourceTree = "<group>";
 		};
+		7A868D391E8E3D1A00F38D3D /* cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = cell;
+			sourceTree = "<group>";
+		};
 		7AA5B57D1E6E8BF200B5CE2D /* package */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +137,8 @@
 				7AA42DD21E51556B007E6015 /* PackageTableViewController.swift */,
 				7A28C4821E4C87EB00A95045 /* PackageTableViewCell.swift */,
 				7A1B14E21E54326900326A98 /* DetailViewController.swift */,
+				7A868D371E8E3C1E00F38D3D /* DetailTableViewController.swift */,
+				7A868D391E8E3D1A00F38D3D /* cell */,
 			);
 			name = package;
 			sourceTree = "<group>";
@@ -322,6 +333,7 @@
 				7AEE840B1E6FDA2A00D606E4 /* OrderTableViewCell.swift in Sources */,
 				7AA42DD11E51515D007E6015 /* Message.swift in Sources */,
 				7AEE84081E6FD9F900D606E4 /* OrderTableViewController.swift in Sources */,
+				7A868D381E8E3C1E00F38D3D /* DetailTableViewController.swift in Sources */,
 				7A1078CA1E4718550026A90E /* MainTabBarController.swift in Sources */,
 				7A28C4831E4C87EB00A95045 /* PackageTableViewCell.swift in Sources */,
 				7A688F151E7EA8AA002AC86A /* CreateTableViewController.swift in Sources */,

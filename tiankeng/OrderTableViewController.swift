@@ -120,7 +120,7 @@ class OrderTableViewController: UITableViewController {
                 fatalError("Unexpeted destination: \(segue.destination)")
             }
             guard let selectedPackageCell = sender as? OrderTableViewCell else {
-                fatalError("Unexpected sender: \(sender)")
+                fatalError("Unexpected sender: \(String(describing: sender))")
             }
             guard let indexPath = tableView.indexPath(for: selectedPackageCell) else {
                 fatalError("The selected cell is not being displayed by the table")
@@ -134,7 +134,7 @@ class OrderTableViewController: UITableViewController {
             break
             
         default:
-            fatalError("Unexpected Segue Identifier; \(segue.identifier)")
+            fatalError("Unexpected Segue Identifier; \(String(describing: segue.identifier))")
         }
     }
     

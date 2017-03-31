@@ -128,7 +128,7 @@ class PackageTableViewController: UITableViewController {
             }
             
             guard let selectedPackageCell = sender as? PackageTableViewCell else {
-                fatalError("Unexpected sender: \(sender)")
+                fatalError("Unexpected sender: \(String(describing: sender))")
             }
             
             guard let indexPath = tableView.indexPath(for: selectedPackageCell) else {
@@ -141,7 +141,7 @@ class PackageTableViewController: UITableViewController {
             MessageDetailViewController.hidesBottomBarWhenPushed = true
             break
         default:
-            fatalError("Unexpected Segue Identifier; \(segue.identifier)")
+            fatalError("Unexpected Segue Identifier; \(String(describing: segue.identifier))")
         }
     }
     

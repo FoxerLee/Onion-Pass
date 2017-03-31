@@ -25,8 +25,9 @@ class CreateTableViewController: UITableViewController {
         let founderPhone = currentUser?.mobilePhoneNumber?.stringValue
         
         
+        let defaultPhoto = UIImage(named: "defaultImage")
         
-        message = Message(package: "", describe: "", time: "", remark: "", name: "", phone: "", address: "", founderPhone: founderPhone!, founderAddress: "", courierPhone: "", courierAddress: "", photo: nil, ID: "", state: "")
+        message = Message(package: "", describe: "", time: "", remark: "", name: "", phone: "", address: "", founderPhone: founderPhone!, founderAddress: "", courierPhone: "", courierAddress: "", photo: defaultPhoto, ID: "", state: "")
         
         updateSaveButtonState()
     }
@@ -78,7 +79,7 @@ class CreateTableViewController: UITableViewController {
             cell.founderNameLabel.text = currentUser?.username?.stringValue
             cell.FounderPhoneLabel.text = currentUser?.mobilePhoneNumber?.stringValue
             cell.founderAddressLabel.text = currentUser?.get("address")?.stringValue
-            //还要加入头像
+            
             
             return cell
         }
@@ -93,9 +94,21 @@ class CreateTableViewController: UITableViewController {
             return cell
         }
         
-}
+    }
     
-
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if (section == 0) {
+            return "货物信息"
+        }
+        
+        else if (section == 1) {
+            return "寄货人信息"
+        }
+        
+        else {
+            return "收货人信息"
+        }
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
