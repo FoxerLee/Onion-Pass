@@ -123,7 +123,7 @@ class PackageTableViewController: UITableViewController {
             break
         //加载显示详情的viewcontroller
         case "ShowDetail":
-            guard let MessageDetailViewController = segue.destination as? DetailViewController else {
+            guard let MessageDetailViewController = segue.destination as? DetailTableViewController else {
                 fatalError("Unexpeted destination: \(segue.destination)")
             }
             

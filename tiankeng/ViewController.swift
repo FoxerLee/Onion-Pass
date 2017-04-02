@@ -23,9 +23,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         myImageView.layer.cornerRadius = myImageView.frame.size.width / 2
         
         
-        let testObject = AVObject(className: "TestObject")
-        testObject.setObject("Hello World!", forKey: "words")
-        testObject.save()
+        
        // phoneTextField.leftViewMode = UITextFieldViewMode.always
        // phoneTextField.leftView = UIImageView(image:UIImage(named: "User"))
         // Do any additional setup after loading the view, typically from a nib.
