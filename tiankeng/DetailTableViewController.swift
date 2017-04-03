@@ -65,7 +65,7 @@ class DetailTableViewController: UITableViewController {
                 let postman = object?.popLast()
                 
                 cell.PostmanPhoneLabel.text = postmanPhone
-                cell.PostmanNameLabel.text = postman?.get("username") as? String
+                cell.PostmanNameLabel.text = postman?.get("username")?.stringValue
                 
             }
             return cell

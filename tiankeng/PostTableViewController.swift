@@ -1,8 +1,8 @@
 //
-//  OrderTableViewController.swift
+//  PostTableViewController.swift
 //  tiankeng
 //
-//  Created by 李源 on 2017/3/8.
+//  Created by 李源 on 2017/4/3.
 //  Copyright © 2017年 foxerlee. All rights reserved.
 //
 
@@ -11,14 +11,12 @@ import os
 import LeanCloud
 import AVOSCloud
 
-class OrderTableViewController: UITableViewController {
+class PostTableViewController: UITableViewController {
 
     var messages = [Message]()
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(OrderTableViewController.reload), for: UIControlEvents.valueChanged)
         refreshControl.attributedTitle = NSAttributedString(string: "reloading")
@@ -34,7 +32,7 @@ class OrderTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        
+        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
@@ -45,11 +43,11 @@ class OrderTableViewController: UITableViewController {
 
     //构建tableview的每一个cell
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIndentifier = "OrderTableViewCell"
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIndentifier, for: indexPath) as? OrderTableViewCell else {
-            fatalError("the dequeued cell is not an instance of OrderTableViewCell")
+        let cellIndentifier = "PostTableViewCell"
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIndentifier, for: indexPath) as? PostTableViewCell else {
+            fatalError("the dequeued cell is not an instance of PostTableViewCell")
         }
-
+        
         //这里是先讲package的信息从一个存这些数据的数组中读取出来
         let message = messages[indexPath.row]
         
@@ -61,36 +59,16 @@ class OrderTableViewController: UITableViewController {
         
         return cell
     }
-    
-
-    @IBAction func unwindToConfirmButton(sender: UIStoryboardSegue) {
-        if let sourceViewController = sender.source as? ConfirmTableViewController, let message = sourceViewController.message {
-            
-            message.state = "已接单"
-            let pk = LCObject(className: "Packages", objectId: message.ID!)
-            pk.set("state", value: message.state)
-            //同时把接单人的电话保存起来
-            let current = LCUser.current
-            let postmanPhone = current?.mobilePhoneNumber?.stringValue
-            pk.set("courierPhone", value: postmanPhone)
-            
-            pk.save()
-            
-            messages.removeAll()
-            loadMessages()
-        }
-    }
-    
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         
         switch (segue.identifier ?? "") {
-        case "Confirm":
-            guard let confirmViewController = segue.destination as? ConfirmTableViewController else {
+        case "Arrive":
+            guard let arriveViewController = segue.destination as? ArriveTableViewController else {
                 fatalError("Unexpeted destination: \(segue.destination)")
             }
-            guard let selectedPackageCell = sender as? OrderTableViewCell else {
+            guard let selectedPackageCell = sender as? PostTableViewCell else {
                 fatalError("Unexpected sender: \(String(describing: sender))")
             }
             guard let indexPath = tableView.indexPath(for: selectedPackageCell) else {
@@ -98,14 +76,29 @@ class OrderTableViewController: UITableViewController {
             }
             
             let selectedPackage = messages[indexPath.row]
-            confirmViewController.message = selectedPackage
+            arriveViewController.message = selectedPackage
             
-            confirmViewController.hidesBottomBarWhenPushed = true
+            arriveViewController.hidesBottomBarWhenPushed = true
             
             break
             
         default:
             fatalError("Unexpected Segue Identifier; \(String(describing: segue.identifier))")
+        }
+    }
+    
+    @IBAction func unwindToArriveButton(sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.source as? ArriveTableViewController, let message = sourceViewController.message {
+            
+            message.state = "已送达"
+            let pk = LCObject(className: "Packages", objectId: message.ID!)
+            pk.set("state", value: message.state)
+            
+            
+            pk.save()
+            
+            messages.removeAll()
+            loadMessages()
         }
     }
     
@@ -116,11 +109,14 @@ class OrderTableViewController: UITableViewController {
         tableView.reloadData()
         refreshControl?.endRefreshing()
     }
- 
+    
     private func loadMessages() {
         let query = AVQuery(className: "Packages")
-        //读取到的数据都是没有接单的
-        query.whereKey("state", equalTo: "未接单")
+        //读取到的数据都是自己接的单
+        let current = LCUser.current
+        let currentPhone = current?.mobilePhoneNumber?.stringValue
+        query.whereKey("courierPhone", equalTo: currentPhone!)
+        query.whereKey("state", equalTo: "已接单")
         //发布的单的数量
         var counts = query.countObjects()
         var allMessages = query.findObjects()
@@ -135,9 +131,7 @@ class OrderTableViewController: UITableViewController {
             if ( message?.founderPhone == founderPhone) {
                 messages.append(message!)
             }
-            
         }
-        
     }
     
     //自己定义一个函数，把leancloud上的LCObject变成我本地的Message形式
@@ -167,6 +161,4 @@ class OrderTableViewController: UITableViewController {
         
         return message
     }
-    
 }
-

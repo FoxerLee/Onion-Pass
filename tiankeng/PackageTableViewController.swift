@@ -275,7 +275,7 @@ class PackageTableViewController: UITableViewController {
         let phone = message.object(forKey: "phone") as! String
         let address = message.object(forKey: "address") as! String
         
-        //
+        //获得图片
         let file = message.object(forKey: "photo") as? AVFile
         let data = file?.getData()
         let photo = UIImage(data: data!)

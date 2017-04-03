@@ -112,7 +112,108 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uak-ur-v1O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1909" y="824"/>
+            <point key="canvasLocation" x="1194" y="1474"/>
+        </scene>
+        <!--正在派送-->
+        <scene sceneID="czS-H8-F5d">
+            <objects>
+                <tableViewController id="ebG-AL-MoV" customClass="PostTableViewController" customModule="tiankeng" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" id="ufE-pK-t2F">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostTableViewCell" rowHeight="70" id="WRl-5A-iG4" customClass="PostTableViewCell" customModule="tiankeng" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="320" height="70"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WRl-5A-iG4" id="n2u-py-Yru">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="69.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="8qa-sK-imM">
+                                            <rect key="frame" x="7" y="5" width="60" height="60"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="货物名：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eaw-1U-4IM">
+                                            <rect key="frame" x="91" y="8" width="50" height="15"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="package" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6PT-WX-9WM">
+                                            <rect key="frame" x="143" y="8" width="169" height="15"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="收货人：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HHC-tP-zfD">
+                                            <rect key="frame" x="91" y="28" width="50" height="15"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5sn-qa-QyZ">
+                                            <rect key="frame" x="143" y="28" width="169" height="15"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="联系电话：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VaY-KX-hfb">
+                                            <rect key="frame" x="79" y="48" width="62" height="15"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="phone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="idU-li-uNr">
+                                            <rect key="frame" x="143" y="48" width="169" height="15"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameLabel" destination="5sn-qa-QyZ" id="8ds-2u-hXe"/>
+                                    <outlet property="packageLabel" destination="6PT-WX-9WM" id="L3G-mN-fth"/>
+                                    <outlet property="phoneLabel" destination="idU-li-uNr" id="Veu-KS-NPQ"/>
+                                    <outlet property="photoImageView" destination="8qa-sK-imM" id="pgO-Jc-lqr"/>
+                                    <segue destination="ANi-ZI-wPg" kind="show" identifier="Arrive" id="XiZ-aN-rrO"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ebG-AL-MoV" id="nPO-2G-h4D"/>
+                            <outlet property="delegate" destination="ebG-AL-MoV" id="yn8-v7-iwZ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="正在派送" id="WNO-33-Xem"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lh3-vx-fEi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1906.875" y="683.45070422535207"/>
+        </scene>
+        <!--送货-->
+        <scene sceneID="7pM-qF-SZo">
+            <objects>
+                <navigationController id="3Nk-q4-geT" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="送货" id="9Cf-u0-41V"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EoM-CK-lr7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ebG-AL-MoV" kind="relationship" relationship="rootViewController" id="1XM-t4-1iv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="daB-PZ-uck" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1114" y="696"/>
         </scene>
         <!--我的-->
         <scene sceneID="dAg-U2-IZF">
@@ -129,7 +230,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pee-z1-dbO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1114" y="824"/>
+            <point key="canvasLocation" x="324" y="1321"/>
         </scene>
         <!--我的快递-->
         <scene sceneID="W8F-Cn-Aar">
@@ -676,7 +777,7 @@
             </objects>
             <point key="canvasLocation" x="2171" y="-1539"/>
         </scene>
-        <!--查看物流-->
+        <!--可接快递-->
         <scene sceneID="cgj-gD-bm9">
             <objects>
                 <tableViewController id="qqk-SG-exw" customClass="OrderTableViewController" customModule="tiankeng" customModuleProvider="target" sceneMemberID="viewController">
@@ -745,7 +846,7 @@
                                     <outlet property="packageLabel" destination="FuV-Wi-Cs6" id="m4v-rx-i3q"/>
                                     <outlet property="phoneLabel" destination="myF-DA-67m" id="pHN-WP-XIz"/>
                                     <outlet property="photoImageView" destination="CXe-KC-I6T" id="ftQ-d7-oq9"/>
-                                    <segue destination="Gcm-Oq-ER0" kind="show" identifier="Confirm" id="ryG-gK-e2M"/>
+                                    <segue destination="Cp9-EV-M8W" kind="show" identifier="Confirm" id="kJ4-IR-0YE"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -754,138 +855,17 @@
                             <outlet property="delegate" destination="qqk-SG-exw" id="J4g-IK-DPR"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="查看物流" id="TN8-YX-m8u" colorLabel="IBBuiltInLabel-Green"/>
+                    <navigationItem key="navigationItem" title="可接快递" id="TN8-YX-m8u" colorLabel="IBBuiltInLabel-Green"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Idq-ki-ehi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1908.75" y="34.859154929577464"/>
         </scene>
-        <!--确认接单-->
-        <scene sceneID="2bt-4P-FYL">
-            <objects>
-                <viewController id="Gcm-Oq-ER0" customClass="ConfirmViewController" customModule="tiankeng" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="EwQ-5e-I8l"/>
-                        <viewControllerLayoutGuide type="bottom" id="ZyY-YC-X4Z"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Ih5-S9-MbI">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="收货人信息" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d8B-hb-25b">
-                                <rect key="frame" x="112" y="79" width="97" height="23"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="package" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kb5-N8-RWe">
-                                <rect key="frame" x="16" y="110" width="288" height="22"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bYh-Cc-ElY">
-                                <rect key="frame" x="16" y="140" width="288" height="22"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="phone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BtN-VP-pf8">
-                                <rect key="frame" x="16" y="170" width="288" height="22"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L2T-VS-x21">
-                                <rect key="frame" x="16" y="200" width="288" height="22"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="寄货人信息" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3u7-tn-V8N">
-                                <rect key="frame" x="112" y="237" width="97" height="23"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="founderName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eCI-Uh-mgZ">
-                                <rect key="frame" x="16" y="268" width="288" height="22"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="founderPhone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9fe-Br-FZw">
-                                <rect key="frame" x="16" y="298" width="288" height="22"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="founderAddress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EqT-W3-XQD">
-                                <rect key="frame" x="16" y="328" width="288" height="22"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Bw-3H-vjt">
-                                <rect key="frame" x="129" y="423" width="62" height="30"/>
-                                <state key="normal" title="确认接单"/>
-                                <connections>
-                                    <segue destination="L3e-kT-Onn" kind="unwind" unwindAction="unwindToConfirmButtonWithSender:" id="vKk-uJ-1VE"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="L2T-VS-x21" firstAttribute="leading" secondItem="Ih5-S9-MbI" secondAttribute="leadingMargin" id="1ud-WM-qwg"/>
-                            <constraint firstItem="eCI-Uh-mgZ" firstAttribute="trailing" secondItem="Ih5-S9-MbI" secondAttribute="trailingMargin" id="31S-5d-hSn"/>
-                            <constraint firstItem="BtN-VP-pf8" firstAttribute="top" secondItem="bYh-Cc-ElY" secondAttribute="bottom" constant="8" id="6Qw-nH-5Cw"/>
-                            <constraint firstItem="3u7-tn-V8N" firstAttribute="top" secondItem="L2T-VS-x21" secondAttribute="bottom" constant="15" id="AkR-j5-UIh"/>
-                            <constraint firstItem="9fe-Br-FZw" firstAttribute="top" secondItem="eCI-Uh-mgZ" secondAttribute="bottom" constant="8" id="Ama-pa-isE"/>
-                            <constraint firstItem="3u7-tn-V8N" firstAttribute="centerX" secondItem="Ih5-S9-MbI" secondAttribute="centerX" id="CRh-Kh-vY6"/>
-                            <constraint firstItem="kb5-N8-RWe" firstAttribute="top" secondItem="d8B-hb-25b" secondAttribute="bottom" constant="8" id="CfE-jc-wjB"/>
-                            <constraint firstItem="EqT-W3-XQD" firstAttribute="top" secondItem="9fe-Br-FZw" secondAttribute="bottom" constant="8" id="Ds8-yH-uto"/>
-                            <constraint firstItem="6Bw-3H-vjt" firstAttribute="top" secondItem="EqT-W3-XQD" secondAttribute="bottom" constant="73" id="I8o-Sk-Exd"/>
-                            <constraint firstItem="6Bw-3H-vjt" firstAttribute="centerX" secondItem="Ih5-S9-MbI" secondAttribute="centerX" id="JEt-pO-Jf5"/>
-                            <constraint firstItem="kb5-N8-RWe" firstAttribute="trailing" secondItem="Ih5-S9-MbI" secondAttribute="trailingMargin" id="KeZ-gu-vKj"/>
-                            <constraint firstItem="BtN-VP-pf8" firstAttribute="trailing" secondItem="Ih5-S9-MbI" secondAttribute="trailingMargin" id="Ltu-k7-Er9"/>
-                            <constraint firstItem="bYh-Cc-ElY" firstAttribute="leading" secondItem="Ih5-S9-MbI" secondAttribute="leadingMargin" id="MaQ-jH-RhL"/>
-                            <constraint firstItem="9fe-Br-FZw" firstAttribute="leading" secondItem="Ih5-S9-MbI" secondAttribute="leadingMargin" id="OJg-rB-Efk"/>
-                            <constraint firstItem="eCI-Uh-mgZ" firstAttribute="top" secondItem="3u7-tn-V8N" secondAttribute="bottom" constant="8" id="PhP-3D-ZAh"/>
-                            <constraint firstItem="L2T-VS-x21" firstAttribute="trailing" secondItem="Ih5-S9-MbI" secondAttribute="trailingMargin" id="RoH-fz-rI1"/>
-                            <constraint firstItem="kb5-N8-RWe" firstAttribute="leading" secondItem="Ih5-S9-MbI" secondAttribute="leadingMargin" id="Vg9-qR-fne"/>
-                            <constraint firstItem="BtN-VP-pf8" firstAttribute="leading" secondItem="Ih5-S9-MbI" secondAttribute="leadingMargin" id="Vt1-ri-YbW"/>
-                            <constraint firstItem="bYh-Cc-ElY" firstAttribute="top" secondItem="kb5-N8-RWe" secondAttribute="bottom" constant="8" id="YkC-Wg-AZ8"/>
-                            <constraint firstItem="L2T-VS-x21" firstAttribute="top" secondItem="BtN-VP-pf8" secondAttribute="bottom" constant="8" id="Ymr-iA-NLv"/>
-                            <constraint firstItem="9fe-Br-FZw" firstAttribute="trailing" secondItem="Ih5-S9-MbI" secondAttribute="trailingMargin" id="Zqd-O8-mW0"/>
-                            <constraint firstItem="d8B-hb-25b" firstAttribute="top" secondItem="EwQ-5e-I8l" secondAttribute="bottom" constant="15" id="dJ4-f8-MzS"/>
-                            <constraint firstItem="EqT-W3-XQD" firstAttribute="leading" secondItem="Ih5-S9-MbI" secondAttribute="leadingMargin" id="mJW-Y8-N0v"/>
-                            <constraint firstItem="eCI-Uh-mgZ" firstAttribute="leading" secondItem="Ih5-S9-MbI" secondAttribute="leadingMargin" id="nhp-Sl-LKS"/>
-                            <constraint firstItem="EqT-W3-XQD" firstAttribute="trailing" secondItem="Ih5-S9-MbI" secondAttribute="trailingMargin" id="nrD-gO-gF0"/>
-                            <constraint firstItem="d8B-hb-25b" firstAttribute="centerX" secondItem="Ih5-S9-MbI" secondAttribute="centerX" id="xQ3-uT-blD"/>
-                            <constraint firstItem="bYh-Cc-ElY" firstAttribute="trailing" secondItem="Ih5-S9-MbI" secondAttribute="trailingMargin" id="zxw-bh-qXe"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="确认接单" id="QTQ-eb-lke"/>
-                    <connections>
-                        <outlet property="addressLabel" destination="L2T-VS-x21" id="Ii4-Ge-zGY"/>
-                        <outlet property="founderAddressLabel" destination="EqT-W3-XQD" id="LZj-em-Eqw"/>
-                        <outlet property="founderNameLabel" destination="eCI-Uh-mgZ" id="Vkd-nH-Slp"/>
-                        <outlet property="founderPhoneLabel" destination="9fe-Br-FZw" id="G9u-ug-Nk1"/>
-                        <outlet property="nameLabel" destination="bYh-Cc-ElY" id="nuz-dY-Oec"/>
-                        <outlet property="packageLabel" destination="kb5-N8-RWe" id="Hjh-uq-cto"/>
-                        <outlet property="phoneLabel" destination="BtN-VP-pf8" id="LjL-Oo-7eQ"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jlD-k3-drF" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="L3e-kT-Onn" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="2994.375" y="199.64788732394368"/>
-        </scene>
-        <!--送货-->
+        <!--接单-->
         <scene sceneID="JCL-c1-Mui">
             <objects>
                 <navigationController id="bCg-K3-NoD" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="送货" image="send" id="ERp-08-nNF"/>
+                    <tabBarItem key="tabBarItem" title="接单" image="send" id="ERp-08-nNF"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="2TU-QN-r6Q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1013,7 +993,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fs0-oJ-imQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-423.75" y="744.71830985915494"/>
+            <point key="canvasLocation" x="-934" y="830"/>
         </scene>
         <!--寄货-->
         <scene sceneID="fVd-gp-EGr">
@@ -1044,12 +1024,13 @@
                     <connections>
                         <segue destination="WLA-eK-vh0" kind="relationship" relationship="viewControllers" id="Q3D-ud-lN1"/>
                         <segue destination="bCg-K3-NoD" kind="relationship" relationship="viewControllers" id="eka-BG-dso"/>
-                        <segue destination="TLr-t6-hvO" kind="relationship" relationship="viewControllers" id="aIr-2x-s6Q"/>
+                        <segue destination="3Nk-q4-geT" kind="relationship" relationship="viewControllers" id="Yg8-qL-xNi"/>
+                        <segue destination="TLr-t6-hvO" kind="relationship" relationship="viewControllers" id="wcJ-kg-Rrv"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hCd-KI-bB1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-135" y="35"/>
+            <point key="canvasLocation" x="140" y="285"/>
         </scene>
         <!--货物详情-->
         <scene sceneID="ORU-wg-exz">
@@ -1231,7 +1212,413 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NdN-We-gLZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2906" y="-787"/>
+            <point key="canvasLocation" x="2577" y="-789"/>
+        </scene>
+        <!--货物详情-->
+        <scene sceneID="5kr-bJ-Mue">
+            <objects>
+                <tableViewController id="Cp9-EV-M8W" customClass="ConfirmTableViewController" customModule="tiankeng" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="70" sectionHeaderHeight="18" sectionFooterHeight="18" id="90n-D7-li4">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PackageConfirmTableViewCell" rowHeight="70" id="XCp-ym-Lv7" customClass="PackageConfirmTableViewCell" customModule="tiankeng" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="55.5" width="320" height="70"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XCp-ym-Lv7" id="IaJ-wI-Gqc">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="69.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="Oti-o6-0Rd">
+                                            <rect key="frame" x="7" y="5" width="60" height="60"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="package" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k7H-ma-Gyl">
+                                            <rect key="frame" x="144" y="8" width="168" height="15"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="describe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PqB-SQ-uon">
+                                            <rect key="frame" x="144" y="28" width="168" height="15"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eun-lZ-GWr">
+                                            <rect key="frame" x="144" y="48" width="168" height="15"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="货物名：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yiC-LG-e58">
+                                            <rect key="frame" x="91" y="8" width="50" height="15"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="货物描述：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tss-wR-IIW">
+                                            <rect key="frame" x="79" y="28" width="62" height="15"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="送达时间：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NBL-lz-Ola">
+                                            <rect key="frame" x="79" y="48" width="62" height="15"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="describeLabel" destination="PqB-SQ-uon" id="g0I-ru-tWB"/>
+                                    <outlet property="packageLabel" destination="k7H-ma-Gyl" id="v6q-aW-OCh"/>
+                                    <outlet property="photoImageView" destination="Oti-o6-0Rd" id="Pjv-4b-8G8"/>
+                                    <outlet property="timeLabel" destination="Eun-lZ-GWr" id="aPo-Ks-Ful"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FounderConfirmTableViewCell" rowHeight="70" id="iPQ-lN-OhM" customClass="FounderConfirmTableViewCell" customModule="tiankeng" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="125.5" width="320" height="70"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iPQ-lN-OhM" id="00M-si-ucZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="69.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="founderName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1th-96-21L">
+                                            <rect key="frame" x="80" y="8" width="232" height="15"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="founderPhone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UzU-O8-87f">
+                                            <rect key="frame" x="80" y="28" width="232" height="15"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="founderAddress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bzT-4N-ONb">
+                                            <rect key="frame" x="80" y="48" width="232" height="15"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="寄货人：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BXE-j7-U11">
+                                            <rect key="frame" x="19" y="8" width="50" height="15"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="联系电话：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m3P-rV-e7f">
+                                            <rect key="frame" x="7" y="28" width="62" height="15"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="送货地址：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="icx-eG-MT3">
+                                            <rect key="frame" x="7" y="48" width="62" height="15"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="founderAddressLabel" destination="bzT-4N-ONb" id="gB1-i9-ci7"/>
+                                    <outlet property="founderNameLabel" destination="1th-96-21L" id="Hfb-8R-5Kn"/>
+                                    <outlet property="founderPhoneLabel" destination="UzU-O8-87f" id="yBX-KG-jxt"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ReceiverConfirmTableViewCell" rowHeight="70" id="sql-1N-bab" customClass="ReceiverConfirmTableViewCell" customModule="tiankeng" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="195.5" width="320" height="70"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sql-1N-bab" id="FWt-N8-END">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="69.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ReceiverName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TQX-ez-FIF">
+                                            <rect key="frame" x="80" y="8" width="232" height="15"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ReceiverPhone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vvC-vC-DI4">
+                                            <rect key="frame" x="80" y="28" width="232" height="15"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ReceiverAddress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mam-YF-h8F">
+                                            <rect key="frame" x="80" y="48" width="232" height="15"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="收货人：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yga-Zl-vBq">
+                                            <rect key="frame" x="19" y="8" width="50" height="15"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="联系电话：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CfG-xY-OVE">
+                                            <rect key="frame" x="7" y="28.5" width="62" height="15"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="收货地址：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ji4-qN-ZV3">
+                                            <rect key="frame" x="7" y="48" width="62" height="15"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="ReceiverAddressLabel" destination="mam-YF-h8F" id="RZu-eK-eNV"/>
+                                    <outlet property="ReceiverNameLabel" destination="TQX-ez-FIF" id="Q7T-pm-tej"/>
+                                    <outlet property="ReceiverPhoneLabel" destination="vvC-vC-DI4" id="BPV-Lr-V0o"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="货物详情" id="iHA-UG-z8l">
+                        <barButtonItem key="rightBarButtonItem" title="确认接单" id="sD7-9A-bsq">
+                            <connections>
+                                <segue destination="32x-3r-wj0" kind="unwind" unwindAction="unwindToConfirmButtonWithSender:" id="g43-fy-kVh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="confirmButton" destination="sD7-9A-bsq" id="cqC-Xu-IH7"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q13-8O-AHa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="32x-3r-wj0" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2634" y="35"/>
+        </scene>
+        <!--货物详情-->
+        <scene sceneID="CBi-If-tRF">
+            <objects>
+                <tableViewController id="ANi-ZI-wPg" customClass="ArriveTableViewController" customModule="tiankeng" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="70" sectionHeaderHeight="18" sectionFooterHeight="18" id="jjk-Lk-iiN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PackageArriveTableViewCell" rowHeight="70" id="jpW-kX-ePX" customClass="PackageArriveTableViewCell" customModule="tiankeng" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="55.5" width="320" height="70"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jpW-kX-ePX" id="WXQ-Yo-UDq">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="69.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="Cw9-CV-aub">
+                                            <rect key="frame" x="7" y="5" width="60" height="60"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="package" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NyK-aG-xXa">
+                                            <rect key="frame" x="144" y="8" width="168" height="15"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="describe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VrG-t9-9Y8">
+                                            <rect key="frame" x="144" y="28" width="168" height="15"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CFs-kI-9ky">
+                                            <rect key="frame" x="144" y="48" width="168" height="15"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="货物名：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jbe-GY-OeM">
+                                            <rect key="frame" x="91" y="8" width="50" height="15"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="货物描述：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zXr-Wz-ZsY">
+                                            <rect key="frame" x="79" y="28" width="62" height="15"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="送达时间：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x4O-OM-YwD">
+                                            <rect key="frame" x="79" y="48" width="62" height="15"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="describeLabel" destination="VrG-t9-9Y8" id="bL9-kc-51g"/>
+                                    <outlet property="packageLabel" destination="NyK-aG-xXa" id="o2a-Of-Wvy"/>
+                                    <outlet property="photoImageView" destination="Cw9-CV-aub" id="E0I-55-csa"/>
+                                    <outlet property="timeLabel" destination="CFs-kI-9ky" id="4QN-Pb-s6W"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FounderArriveTableViewCell" rowHeight="70" id="LO2-FA-xsw" customClass="FounderArriveTableViewCell" customModule="tiankeng" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="125.5" width="320" height="70"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LO2-FA-xsw" id="nbv-ZB-oBj">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="69.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="founderName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZlA-ds-P68">
+                                            <rect key="frame" x="80" y="8" width="232" height="15"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="founderPhone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6tl-Yd-0Wh">
+                                            <rect key="frame" x="80" y="28" width="232" height="15"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="founderAddress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C8r-W3-u2l">
+                                            <rect key="frame" x="80" y="48" width="232" height="15"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="寄货人：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Oc-tb-Nnm">
+                                            <rect key="frame" x="19" y="8" width="50" height="15"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="联系电话：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Fo-ns-bpt">
+                                            <rect key="frame" x="7" y="28" width="62" height="15"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="送货地址：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3g2-Yn-snn">
+                                            <rect key="frame" x="7" y="48" width="62" height="15"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="founderAddressLabel" destination="C8r-W3-u2l" id="Fwq-Pb-FjG"/>
+                                    <outlet property="founderNameLabel" destination="ZlA-ds-P68" id="ZUs-v3-VKB"/>
+                                    <outlet property="founderPhoneLabel" destination="6tl-Yd-0Wh" id="dmf-aU-6M3"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ReceiverArriveTableViewCell" rowHeight="70" id="cMa-cu-0UI" customClass="ReceiverArriveTableViewCell" customModule="tiankeng" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="195.5" width="320" height="70"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cMa-cu-0UI" id="CTd-3U-Mys">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="69.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ReceiverName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RV2-TO-k1y">
+                                            <rect key="frame" x="80" y="8" width="232" height="15"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ReceiverPhone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgh-hk-Qaj">
+                                            <rect key="frame" x="80" y="28" width="232" height="15"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ReceiverAddress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q8I-qD-T2P">
+                                            <rect key="frame" x="80" y="48" width="232" height="15"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="收货人：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ETd-is-aI5">
+                                            <rect key="frame" x="19" y="8" width="50" height="15"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="联系电话：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4wm-UH-bnP">
+                                            <rect key="frame" x="7" y="28.5" width="62" height="15"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="收货地址：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Hg-aS-CJF">
+                                            <rect key="frame" x="7" y="48" width="62" height="15"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="ReceiverAddressLabel" destination="q8I-qD-T2P" id="DTa-Ec-rZ5"/>
+                                    <outlet property="ReceiverNameLabel" destination="RV2-TO-k1y" id="jcn-Qq-v7A"/>
+                                    <outlet property="ReceiverPhoneLabel" destination="dgh-hk-Qaj" id="2ek-21-tbS"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="货物详情" id="WM5-vS-OEW">
+                        <barButtonItem key="rightBarButtonItem" title="确认送达" id="Qnn-hw-3AW">
+                            <connections>
+                                <segue destination="Om8-4v-cym" kind="unwind" unwindAction="unwindToArriveButtonWithSender:" id="0qS-ap-mt9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="arriveButton" destination="Qnn-hw-3AW" id="0KY-A1-x0W"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CAW-uX-Ttb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Om8-4v-cym" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2636" y="683"/>
         </scene>
     </scenes>
     <resources>
