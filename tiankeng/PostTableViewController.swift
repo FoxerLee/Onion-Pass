@@ -113,8 +113,8 @@ class PostTableViewController: UITableViewController {
     private func loadMessages() {
         let query = AVQuery(className: "Packages")
         //读取到的数据都是自己接的单
-        let current = LCUser.current
-        let currentPhone = current?.mobilePhoneNumber?.stringValue
+        let currentUser = AVUser.current()
+        let currentPhone = currentUser?.mobilePhoneNumber
         query.whereKey("courierPhone", equalTo: currentPhone!)
         query.whereKey("state", equalTo: "已接单")
         //发布的单的数量
@@ -126,11 +126,7 @@ class PostTableViewController: UITableViewController {
             counts -= 1
             
             let message = self.cloudToLocal(message: cloudMessage! as! AVObject)
-            let currentUser = LCUser.current
-            let founderPhone = currentUser?.mobilePhoneNumber?.stringValue
-            if ( message?.founderPhone == founderPhone) {
-                messages.append(message!)
-            }
+            messages.append(message!)
         }
     }
     

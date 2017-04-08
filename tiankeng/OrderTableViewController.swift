@@ -70,8 +70,9 @@ class OrderTableViewController: UITableViewController {
             let pk = LCObject(className: "Packages", objectId: message.ID!)
             pk.set("state", value: message.state)
             //同时把接单人的电话保存起来
-            let current = LCUser.current
-            let postmanPhone = current?.mobilePhoneNumber?.stringValue
+            let currentUser = AVUser.current()
+            
+            let postmanPhone = currentUser?.mobilePhoneNumber
             pk.set("courierPhone", value: postmanPhone)
             
             pk.save()
@@ -130,12 +131,8 @@ class OrderTableViewController: UITableViewController {
             counts -= 1
             
             let message = self.cloudToLocal(message: cloudMessage! as! AVObject)
-            let currentUser = LCUser.current
-            let founderPhone = currentUser?.mobilePhoneNumber?.stringValue
-            if ( message?.founderPhone == founderPhone) {
-                messages.append(message!)
-            }
-            
+
+            messages.append(message!)
         }
         
     }

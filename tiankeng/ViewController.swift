@@ -40,17 +40,38 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let passwordText = passwordTextField.text ?? ""
         
         //用手机号登陆
-        LCUser.logIn(mobilePhoneNumber: phoneText, password: passwordText) { result in
-            switch result {
-            case .success( _):
+//        LCUser.logIn(mobilePhoneNumber: phoneText, password: passwordText) { result in
+//            switch result {
+//            case .success( _):
+//                //切换登陆界面
+//                let sb = UIStoryboard(name: "Main", bundle:nil)
+//                //CVC为该界面storyboardID，Main.storyboard中选中该界面View，Identifier inspector中修改
+//                let vc = sb.instantiateViewController(withIdentifier: "MTBC") as! MainTabBarController
+//                self.present(vc, animated: true, completion: nil)
+//                
+//                break
+//            case .failure( _):
+//                self.phoneTextField.text = nil
+//                self.passwordTextField.text = nil
+//                
+//                let alert = UIAlertController(title: "手机号或密码错误", message: nil, preferredStyle: .alert)
+//                let action = UIAlertAction(title: "请重新输入", style: .default, handler: nil)
+//                
+//                alert.addAction(action)
+//                self.present(alert, animated: true, completion: nil)
+//                break
+//            }
+//        }
+        
+        AVUser.logInWithMobilePhoneNumber(inBackground: phoneText, password: passwordText) { (user : AVUser?, error : Error?) in
+            if (error == nil) {
                 //切换登陆界面
                 let sb = UIStoryboard(name: "Main", bundle:nil)
                 //CVC为该界面storyboardID，Main.storyboard中选中该界面View，Identifier inspector中修改
                 let vc = sb.instantiateViewController(withIdentifier: "MTBC") as! MainTabBarController
                 self.present(vc, animated: true, completion: nil)
-                
-                break
-            case .failure( _):
+            }
+            else {
                 self.phoneTextField.text = nil
                 self.passwordTextField.text = nil
                 
@@ -59,10 +80,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 
                 alert.addAction(action)
                 self.present(alert, animated: true, completion: nil)
-                break
             }
         }
-
     }
     
     //实现按return和背景键之后能够关掉键盘

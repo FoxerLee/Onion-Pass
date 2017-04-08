@@ -63,6 +63,7 @@ class PackageTableViewController: UITableViewController {
         cell.stateLabel.text = message.state
         cell.photoImageView.image = message.photo
         
+        cell.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
         return cell
     }
 
@@ -230,8 +231,10 @@ class PackageTableViewController: UITableViewController {
             counts -= 1
             
             let message = self.cloudToLocal(message: cloudMessage! as! AVObject)
-            let currentUser = LCUser.current
-            let founderPhone = currentUser?.mobilePhoneNumber?.stringValue
+            let currentUser = AVUser.current()
+            
+            //let currentUser = LCUser.current
+            let founderPhone = currentUser?.mobilePhoneNumber
             if (message?.founderPhone == founderPhone) {
                 messages.append(message!)
             }

@@ -15,7 +15,8 @@ class DetailTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
         
     }
 
@@ -52,6 +53,7 @@ class DetailTableViewController: UITableViewController {
         else if (indexPath.section == 1) {
             let cell = tableView.dequeueReusableCell(withIdentifier: "PostmanDetailTableViewCell", for: indexPath) as! PostmanDetailTableViewCell
             //如果没有接单的话
+            
             if (message.state == "未接单") {
                 cell.PostmanNameLabel.text = ""
                 cell.PostmanPhoneLabel.text = ""
@@ -83,6 +85,8 @@ class DetailTableViewController: UITableViewController {
 
     }
  
+
+    
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if (section == 0) {
             return "货物信息"
@@ -96,6 +100,8 @@ class DetailTableViewController: UITableViewController {
             return "收货人信息"
         }
     }
+
+
 
     /*
     // Override to support conditional editing of the table view.

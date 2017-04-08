@@ -16,6 +16,10 @@
 		7A28C47F1E4B03F400A95045 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A28C47E1E4B03F400A95045 /* CreateViewController.swift */; };
 		7A28C4831E4C87EB00A95045 /* PackageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A28C4821E4C87EB00A95045 /* PackageTableViewCell.swift */; };
 		7A3141961E6C3C160056BCEA /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A3141951E6C3C160056BCEA /* ExternalAccessory.framework */; };
+		7A3A47FC1E98C0E900B5D806 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3A47FB1E98C0E900B5D806 /* PhotoViewController.swift */; };
+		7A3A47FF1E98C80600B5D806 /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3A47FE1E98C80600B5D806 /* PhotoTableViewCell.swift */; };
+		7A3A48011E9900BD00B5D806 /* NameTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3A48001E9900BD00B5D806 /* NameTableViewController.swift */; };
+		7A3A48031E99248200B5D806 /* AddressTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3A48021E99248200B5D806 /* AddressTableViewController.swift */; };
 		7A596C2E1E92310300AC01E5 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A596C2D1E92310300AC01E5 /* PostTableViewCell.swift */; };
 		7A596C301E92311900AC01E5 /* PostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A596C2F1E92311900AC01E5 /* PostTableViewController.swift */; };
 		7A596C331E92320000AC01E5 /* ArriveTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A596C321E92320000AC01E5 /* ArriveTableViewController.swift */; };
@@ -37,6 +41,7 @@
 		7AD81E181E45945500D0BD28 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD81E171E45945500D0BD28 /* ViewController.swift */; };
 		7AD81E1B1E45945500D0BD28 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AD81E191E45945500D0BD28 /* Main.storyboard */; };
 		7AD81E1D1E45945500D0BD28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AD81E1C1E45945500D0BD28 /* Assets.xcassets */; };
+		7AE72A7D1E9386AD0014E483 /* MineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE72A7C1E9386AD0014E483 /* MineTableViewController.swift */; };
 		7AEE84081E6FD9F900D606E4 /* OrderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE84071E6FD9F900D606E4 /* OrderTableViewController.swift */; };
 		7AEE840B1E6FDA2A00D606E4 /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE840A1E6FDA2A00D606E4 /* OrderTableViewCell.swift */; };
 		8C18269AD68071BAE9A05428 /* Pods_tiankeng.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF51D23437470343F3795923 /* Pods_tiankeng.framework */; };
@@ -56,6 +61,10 @@
 		7A3141941E6C3C100056BCEA /* tiankeng.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = tiankeng.entitlements; sourceTree = "<group>"; };
 		7A3141951E6C3C160056BCEA /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		7A341C8C1E81060C007DCA63 /* tiankeng-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "tiankeng-Bridging-Header.h"; sourceTree = "<group>"; };
+		7A3A47FB1E98C0E900B5D806 /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		7A3A47FE1E98C80600B5D806 /* PhotoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCell.swift; sourceTree = "<group>"; };
+		7A3A48001E9900BD00B5D806 /* NameTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameTableViewController.swift; sourceTree = "<group>"; };
+		7A3A48021E99248200B5D806 /* AddressTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressTableViewController.swift; sourceTree = "<group>"; };
 		7A596C2D1E92310300AC01E5 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		7A596C2F1E92311900AC01E5 /* PostTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewController.swift; sourceTree = "<group>"; };
 		7A596C321E92320000AC01E5 /* ArriveTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArriveTableViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +88,7 @@
 		7AD81E1A1E45945500D0BD28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7AD81E1C1E45945500D0BD28 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7AD81E211E45945500D0BD28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7AE72A7C1E9386AD0014E483 /* MineTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineTableViewController.swift; sourceTree = "<group>"; };
 		7AEE84071E6FD9F900D606E4 /* OrderTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderTableViewController.swift; sourceTree = "<group>"; };
 		7AEE840A1E6FDA2A00D606E4 /* OrderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderTableViewCell.swift; sourceTree = "<group>"; };
 		EF51D23437470343F3795923 /* Pods_tiankeng.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tiankeng.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,6 +149,14 @@
 				7A120CF91E921828007A518A /* PackageConfirmTableViewCell.swift */,
 				7A120CFB1E921838007A518A /* FounderConfirmTableViewCell.swift */,
 				7A120CFD1E92184A007A518A /* ReceiverConfirmTableViewCell.swift */,
+			);
+			name = cell;
+			sourceTree = "<group>";
+		};
+		7A3A47FD1E98C7EB00B5D806 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				7A3A47FE1E98C80600B5D806 /* PhotoTableViewCell.swift */,
 			);
 			name = cell;
 			sourceTree = "<group>";
@@ -251,6 +269,7 @@
 				7AA5B57D1E6E8BF200B5CE2D /* package */,
 				7AEE84091E6FDA0400D606E4 /* order */,
 				7A596C2C1E9230DB00AC01E5 /* post */,
+				7AE72A7B1E9386170014E483 /* mine */,
 				7AD81E191E45945500D0BD28 /* Main.storyboard */,
 				7AA42DD01E51515D007E6015 /* Message.swift */,
 				7AD81E1C1E45945500D0BD28 /* Assets.xcassets */,
@@ -258,6 +277,18 @@
 				7A341C8C1E81060C007DCA63 /* tiankeng-Bridging-Header.h */,
 			);
 			path = tiankeng;
+			sourceTree = "<group>";
+		};
+		7AE72A7B1E9386170014E483 /* mine */ = {
+			isa = PBXGroup;
+			children = (
+				7AE72A7C1E9386AD0014E483 /* MineTableViewController.swift */,
+				7A3A47FB1E98C0E900B5D806 /* PhotoViewController.swift */,
+				7A3A48001E9900BD00B5D806 /* NameTableViewController.swift */,
+				7A3A48021E99248200B5D806 /* AddressTableViewController.swift */,
+				7A3A47FD1E98C7EB00B5D806 /* cell */,
+			);
+			name = mine;
 			sourceTree = "<group>";
 		};
 		7AEE84091E6FDA0400D606E4 /* order */ = {
@@ -402,6 +433,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A3A47FF1E98C80600B5D806 /* PhotoTableViewCell.swift in Sources */,
 				7A596C3E1E923A2100AC01E5 /* MainTabBarController.swift in Sources */,
 				7A263C1A1E7F811200E7C8A2 /* CreateReceiverViewController.swift in Sources */,
 				7A076ACB1E6D70E600B9A99C /* RegisterViewController.swift in Sources */,
@@ -412,6 +444,8 @@
 				7A120CFC1E921838007A518A /* FounderConfirmTableViewCell.swift in Sources */,
 				7A120CFE1E92184A007A518A /* ReceiverConfirmTableViewCell.swift in Sources */,
 				7A28C47F1E4B03F400A95045 /* CreateViewController.swift in Sources */,
+				7A3A48011E9900BD00B5D806 /* NameTableViewController.swift in Sources */,
+				7AE72A7D1E9386AD0014E483 /* MineTableViewController.swift in Sources */,
 				7A688F171E7EB853002AC86A /* PackageCreateTableViewCell.swift in Sources */,
 				7A596C3A1E92325200AC01E5 /* ReceiverArriveTableViewCell.swift in Sources */,
 				7A6368AF1E8FBD2000095352 /* ReceiverDetailTableViewCell.swift in Sources */,
@@ -427,7 +461,9 @@
 				7A6368AB1E8FBCEA00095352 /* PackageDetailTableViewCell.swift in Sources */,
 				7A868D381E8E3C1E00F38D3D /* DetailTableViewController.swift in Sources */,
 				7A596C331E92320000AC01E5 /* ArriveTableViewController.swift in Sources */,
+				7A3A48031E99248200B5D806 /* AddressTableViewController.swift in Sources */,
 				7A596C301E92311900AC01E5 /* PostTableViewController.swift in Sources */,
+				7A3A47FC1E98C0E900B5D806 /* PhotoViewController.swift in Sources */,
 				7A28C4831E4C87EB00A95045 /* PackageTableViewCell.swift in Sources */,
 				7A688F151E7EA8AA002AC86A /* CreateTableViewController.swift in Sources */,
 				7A688F1B1E7EC734002AC86A /* ReceiverTableViewCell.swift in Sources */,

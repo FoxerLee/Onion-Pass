@@ -47,7 +47,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
             
             //切换回登陆界面
             let sb = UIStoryboard(name: "Main", bundle:nil)
-            let vc = sb.instantiateViewController(withIdentifier: "LVC") as! UINavigationController
+            let vc = sb.instantiateViewController(withIdentifier: "LVC") as! ViewController
             
             self.present(vc, animated: true, completion: nil)
         }

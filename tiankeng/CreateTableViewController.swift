@@ -21,8 +21,9 @@ class CreateTableViewController: UITableViewController {
 
         
         //let section = ["货物详情", "寄货人信息", "送货人信息"]
-        let currentUser = LCUser.current
-        let founderPhone = currentUser?.mobilePhoneNumber?.stringValue
+        let currentUser = AVUser.current()
+        
+        let founderPhone = currentUser?.mobilePhoneNumber
         
         
         let defaultPhoto = UIImage(named: "defaultImage")
@@ -67,19 +68,18 @@ class CreateTableViewController: UITableViewController {
             cell.describeLabel.text = message?.describe
             cell.timeLabel.text = message?.time
             cell.photoImageView.image = message?.photo
-            
+            cell.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
             return cell
         }
         //寄货人的cell
         else if (indexPath.section == 1) {
             let cell = tableView.dequeueReusableCell(withIdentifier: "FounderTableViewCell", for: indexPath) as! FounderTableViewCell
-            let currentUser = LCUser.current
             
+            let currentUser = AVUser.current()
             
-            cell.founderNameLabel.text = currentUser?.username?.stringValue
-            cell.FounderPhoneLabel.text = currentUser?.mobilePhoneNumber?.stringValue
-            cell.founderAddressLabel.text = currentUser?.get("address")?.stringValue
-            
+            cell.founderNameLabel.text = currentUser?.username
+            cell.FounderPhoneLabel.text = currentUser?.mobilePhoneNumber
+            cell.founderAddressLabel.text = currentUser?.object(forKey: "address") as? String
             
             return cell
         }
@@ -91,6 +91,7 @@ class CreateTableViewController: UITableViewController {
             cell.ReceiverPhoneLabel.text = message?.phone
             cell.ReceiverAddressLabel.text = message?.address
             
+            cell.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
             return cell
         }
         

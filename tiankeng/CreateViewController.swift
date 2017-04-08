@@ -9,6 +9,7 @@
 import UIKit
 import os.log
 import LeanCloud
+import AVOSCloud
 
 class CreateViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
 
@@ -118,10 +119,10 @@ class CreateViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         let state = "未接单"
         
         //将寄货人信息保存到本地
-        let currentUser = LCUser.current!
-        let founderPhone = currentUser.mobilePhoneNumber?.stringValue
-        let founderAddress = currentUser.get("address")?.stringValue
-        
+        let currentUser = AVUser.current()
+        //let currentUser = LCUser.current!
+        let founderPhone = currentUser?.mobilePhoneNumber
+        let founderAddress = currentUser?.object(forKey: "address") as! String
 
         //同时把数据保存到本地
         self.message = Message(package: package, describe: describe, time: time, remark: remark, name: "", phone: "", address: "", founderPhone: founderPhone!, founderAddress: founderAddress, courierPhone: "", courierAddress: "", photo: photo, ID: "", state: state)
