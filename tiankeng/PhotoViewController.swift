@@ -19,7 +19,12 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let currentUser = AVUser.current()
+        let file = currentUser?.object(forKey: "icon") as! AVFile
+        let data = file.getData()
+        let photo = UIImage(data: data!)
+        
+        iconImageView.image = photo
         // Do any additional setup after loading the view.
     }
 

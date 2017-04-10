@@ -128,6 +128,19 @@ class PostTableViewController: UITableViewController {
             let message = self.cloudToLocal(message: cloudMessage! as! AVObject)
             messages.append(message!)
         }
+        
+        query.whereKey("state", equalTo: "已送达")
+        var count1s = query.countObjects()
+        var allMessage1s = query.findObjects()
+        
+        while (count1s > 0) {
+            let cloudMessage = allMessage1s?.popLast()
+            count1s -= 1
+            
+            let message = self.cloudToLocal(message: cloudMessage! as! AVObject)
+            messages.append(message!)
+        }
+
     }
     
     //自己定义一个函数，把leancloud上的LCObject变成我本地的Message形式

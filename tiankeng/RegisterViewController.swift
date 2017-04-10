@@ -8,20 +8,29 @@
 
 import UIKit
 import LeanCloud
+import AVOSCloud
 import os
 
-class RegisterViewController: UIViewController, UITextFieldDelegate {
+class RegisterViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var phoneTextField: UITextField!
     
     @IBOutlet weak var confirmButton: UIButton!
+    @IBOutlet weak var iconImageView: UIImageView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        iconImageView.layer.masksToBounds = true
+        iconImageView.layer.cornerRadius = iconImageView.frame.size.width / 2
         // Do any additional setup after loading the view.
+        
+        iconImageView.layer.cornerRadius = 10.0
+        iconImageView.layer.borderWidth = 5.0
+        iconImageView.layer.borderColor = UIColor.white.cgColor
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,7 +39,8 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func Register(_ sender: UIButton) {
-        let registerUser = LCUser()
+        //let registerUser = LCUser()
+        let registerUser = AVUser()
         
         let userNameText = nameTextField.text ?? ""
         let passwordText = passwordTextField.text ?? ""
@@ -39,11 +49,17 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         //确保要全部输入
         if(!userNameText.isEmpty && !passwordText.isEmpty && !phoneText.isEmpty) {
             //将用户的用户名和密码放入数据库
-            registerUser.username = LCString(userNameText)
-            registerUser.password = LCString(passwordText)
-            registerUser.mobilePhoneNumber = LCString(phoneText)
+            //registerUser.username = LCString(userNameText)
+            //registerUser.password = LCString(passwordText)
+            //registerUser.mobilePhoneNumber = LCString(phoneText)
             
-            registerUser.signUp()
+            //registerUser.signUp()
+            registerUser.username = userNameText
+            registerUser.password = passwordText
+            registerUser.mobilePhoneNumber = phoneText
+            
+            let error: NSErrorPointer = nil
+            registerUser.signUp(error)
             
             //切换回登陆界面
             let sb = UIStoryboard(name: "Main", bundle:nil)
@@ -61,7 +77,37 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         }
 
     }
+    @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
+        // UIImagePickerController is a view controller that lets a user pick media from their photo library.
+        let imagePickerController = UIImagePickerController()
+        
+        // Only allow photos to be picked, not taken.
+        imagePickerController.sourceType = .photoLibrary
+        
+        // Make sure ViewController is notified when the user picks an image.
+        imagePickerController.delegate = self
+        present(imagePickerController, animated: true, completion: nil)
+    }
 
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        // The info dictionary may contain multiple representations of the image. You want to use the original.
+        guard let selectedImage = info[UIImagePickerControllerOriginalImage] as? UIImage else {
+            fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
+        }
+        
+        // Set photoImageView to display the selected image.
+        iconImageView.image = selectedImage
+        
+        // Dismiss the picker.
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        // Dismiss the picker if the user canceled.
+        dismiss(animated: true, completion: nil)
+    }
+    
     //cancel按钮
     @IBAction func cancel(_ sender: Any) {
         

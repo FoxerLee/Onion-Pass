@@ -22,7 +22,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
         myImageView.layer.masksToBounds = true
         myImageView.layer.cornerRadius = myImageView.frame.size.width / 2
         
-        
+        myImageView.layer.cornerRadius = 10.0
+        myImageView.layer.borderWidth = 5.0
+        myImageView.layer.borderColor = UIColor.white.cgColor
         
        // phoneTextField.leftViewMode = UITextFieldViewMode.always
        // phoneTextField.leftView = UIImageView(image:UIImage(named: "User"))
