@@ -41,47 +41,47 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="qA8-KW-vWh"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JH8-7h-fwm">
-                                <rect key="frame" x="44" y="324" width="231" height="44"/>
-                                <state key="normal" title="登录" backgroundImage="button_normal">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JH8-7h-fwm">
+                                <rect key="frame" x="60" y="322" width="200" height="35"/>
+                                <state key="normal" image="login">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mwu-iC-0g3"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UAW-qx-mLB">
-                                <rect key="frame" x="118" y="382" width="84" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                <state key="normal" title="现在就注册！"/>
-                                <connections>
-                                    <segue destination="Wdq-7N-Ob0" kind="presentation" id="NxF-oU-8bL"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="button_normal" translatesAutoresizingMaskIntoConstraints="NO" id="bG0-df-OxQ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="bG0-df-OxQ">
                                 <rect key="frame" x="117" y="53" width="85" height="85"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="bG0-df-OxQ" secondAttribute="height" multiplier="1:1" id="AEd-cT-TDd"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UAW-qx-mLB">
+                                <rect key="frame" x="124" y="365" width="72" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <state key="normal" title="现在就注册吧！"/>
+                                <connections>
+                                    <segue destination="Wdq-7N-Ob0" kind="presentation" id="NxF-oU-8bL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="JH8-7h-fwm" firstAttribute="top" secondItem="ETq-uF-PwA" secondAttribute="bottom" constant="29" id="8mj-2H-y3u"/>
                             <constraint firstItem="ETq-uF-PwA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="26" id="GdN-Pg-Wjr"/>
                             <constraint firstItem="81D-fe-lis" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="201" id="LMh-1W-7aa"/>
+                            <constraint firstItem="UAW-qx-mLB" firstAttribute="top" secondItem="JH8-7h-fwm" secondAttribute="bottom" constant="8" id="PG8-1W-UCz"/>
                             <constraint firstItem="ETq-uF-PwA" firstAttribute="top" secondItem="81D-fe-lis" secondAttribute="bottom" constant="14" id="T73-gN-eAB"/>
                             <constraint firstAttribute="trailingMargin" secondItem="81D-fe-lis" secondAttribute="trailing" constant="25" id="Wra-0w-yrc"/>
-                            <constraint firstItem="UAW-qx-mLB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="102" id="XBZ-21-3yx"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="UAW-qx-mLB" secondAttribute="trailing" constant="102" id="b1w-Rs-5d9"/>
                             <constraint firstItem="81D-fe-lis" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="26" id="c6C-SX-0XH"/>
-                            <constraint firstItem="JH8-7h-fwm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="28" id="cEP-ln-YzX"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ETq-uF-PwA" secondAttribute="trailing" constant="25" id="fo4-Pf-bZ0"/>
-                            <constraint firstItem="UAW-qx-mLB" firstAttribute="top" secondItem="JH8-7h-fwm" secondAttribute="bottom" constant="14" id="i6r-Xm-vB8"/>
+                            <constraint firstItem="UAW-qx-mLB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="108" id="gvC-1H-FET"/>
+                            <constraint firstItem="JH8-7h-fwm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="44" id="hi4-bN-94B"/>
                             <constraint firstItem="bG0-df-OxQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="101" id="jGB-W5-7R6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="JH8-7h-fwm" secondAttribute="trailing" constant="44" id="o6H-ex-BCZ"/>
                             <constraint firstItem="bG0-df-OxQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="33" id="oW0-hL-4No"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bG0-df-OxQ" secondAttribute="trailing" constant="102" id="sn9-YI-03R"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="JH8-7h-fwm" secondAttribute="trailing" constant="29" id="too-nQ-SwL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="UAW-qx-mLB" secondAttribute="trailing" constant="108" id="w0t-xK-Ky0"/>
+                            <constraint firstItem="JH8-7h-fwm" firstAttribute="top" secondItem="ETq-uF-PwA" secondAttribute="bottom" constant="27" id="xC1-Ll-YFq"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="登录" id="SiS-zt-4ty"/>
@@ -183,7 +183,7 @@
         <scene sceneID="7pM-qF-SZo">
             <objects>
                 <navigationController id="3Nk-q4-geT" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="送货" id="9Cf-u0-41V"/>
+                    <tabBarItem key="tabBarItem" title="送货" image="send" id="9Cf-u0-41V"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="EoM-CK-lr7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -414,10 +414,10 @@
                                 </connections>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rwx-7b-IY1">
-                                <rect key="frame" x="45" y="389" width="231" height="44"/>
+                                <rect key="frame" x="45" y="399" width="231" height="34"/>
                                 <gestureRecognizers/>
-                                <state key="normal" title="保存" backgroundImage="button_normal">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="保存">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="Mjg-4b-Qhg" kind="unwind" unwindAction="unwindToSaveIconButtonWithSender:" id="Bgu-Bg-jiX"/>
@@ -1082,7 +1082,7 @@
         <scene sceneID="JCL-c1-Mui">
             <objects>
                 <navigationController id="bCg-K3-NoD" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="接单" image="send" id="ERp-08-nNF"/>
+                    <tabBarItem key="tabBarItem" title="接单" image="receive" id="ERp-08-nNF"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="2TU-QN-r6Q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1163,9 +1163,9 @@
                                     <constraint firstItem="wuC-ww-jRF" firstAttribute="leading" secondItem="l4p-zG-B0p" secondAttribute="leading" id="xEw-Ls-Zbp"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QjJ-Rp-iC9">
-                                <rect key="frame" x="45" y="396" width="231" height="44"/>
-                                <state key="normal" title="确认" backgroundImage="button_normal">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QjJ-Rp-iC9">
+                                <rect key="frame" x="45" y="396" width="231" height="35"/>
+                                <state key="normal" image="register">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -1173,7 +1173,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aJM-SA-jWQ">
-                                <rect key="frame" x="121" y="448" width="79" height="24"/>
+                                <rect key="frame" x="121" y="439" width="79" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <state key="normal" title="容我再想一想！"/>
                                 <connections>
@@ -1918,10 +1918,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="button_normal" width="231" height="44"/>
         <image name="defaultImage" width="200" height="200"/>
-        <image name="main" width="28" height="28"/>
-        <image name="mine" width="28" height="28"/>
-        <image name="send" width="28" height="28"/>
+        <image name="login" width="200" height="35"/>
+        <image name="logo" width="147" height="137"/>
+        <image name="main" width="30" height="30"/>
+        <image name="mine" width="30" height="30"/>
+        <image name="receive" width="30" height="30"/>
+        <image name="register" width="200" height="35"/>
+        <image name="send" width="30" height="30"/>
     </resources>
 </document>
