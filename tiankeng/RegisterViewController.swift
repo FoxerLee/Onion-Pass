@@ -58,14 +58,25 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIImagePick
             registerUser.password = passwordText
             registerUser.mobilePhoneNumber = phoneText
             
-            let error: NSErrorPointer = nil
-            registerUser.signUp(error)
             
-            //切换回登陆界面
-            let sb = UIStoryboard(name: "Main", bundle:nil)
-            let vc = sb.instantiateViewController(withIdentifier: "LVC") as! ViewController
+            registerUser.signUpInBackground({ (Bool, Error) in
+                if(Bool) {
+                    //切换回登陆界面
+                    let sb = UIStoryboard(name: "Main", bundle:nil)
+                    let vc = sb.instantiateViewController(withIdentifier: "LVC") as! ViewController
+                    
+                    self.present(vc, animated: true, completion: nil)
+                }
+                
+                else {
+                    let alert = UIAlertController(title: "用户名或手机号已经被注册", message: nil, preferredStyle: .alert)
+                    let action = UIAlertAction(title: "请重新输入", style: .default, handler: nil)
+                    
+                    alert.addAction(action)
+                    self.present(alert, animated: true, completion: nil)
+                }
+            })
             
-            self.present(vc, animated: true, completion: nil)
         }
         //如果没有输入完
         else{
