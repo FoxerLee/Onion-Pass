@@ -1,5 +1,4 @@
 PODS:
-  - Alamofire (4.2.0)
   - AVOSCloud (4.2.0)
   - AVOSCloudCrashReporting (4.2.0):
     - AVOSCloud (= 4.2.0)
@@ -19,24 +18,17 @@ PODS:
     - AVOSCloudIM/_NOARC (= 4.2.0)
   - AVOSCloudIM/_NOARC (4.2.0):
     - AVOSCloud (= 4.2.0)
-  - LeanCloud (10.0.0):
-    - LeanCloud/Storage (= 10.0.0)
-  - LeanCloud/Storage (10.0.0):
-    - Alamofire (~> 4.2.0)
 
 DEPENDENCIES:
   - AVOSCloud
   - AVOSCloudCrashReporting
   - AVOSCloudIM
-  - LeanCloud
 
 SPEC CHECKSUMS:
-  Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
   AVOSCloud: 5446ad0320f4942cce1a036d131992cd1115db99
   AVOSCloudCrashReporting: d7ab96935498000477076e35b17849abfa716652
   AVOSCloudIM: 69df8e8517247f3c2585e321f24e777d5b398843
-  LeanCloud: 0a6a0d52e33dd43d998ab256cc83f6c4954607b8
 
-PODFILE CHECKSUM: ee11985b115a5903d0ef332e14b940e465c87a12
+PODFILE CHECKSUM: ea881e34008c077be54478fc8ec3ff4bdf4bd264
 
 COCOAPODS: 1.2.0

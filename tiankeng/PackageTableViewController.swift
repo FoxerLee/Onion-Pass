@@ -8,7 +8,7 @@
 
 import UIKit
 import os.log
-import LeanCloud
+//import LeanCloud
 import AVOSCloud
 
 class PackageTableViewController: UITableViewController {
@@ -72,27 +72,22 @@ class PackageTableViewController: UITableViewController {
         if editingStyle == .delete {
             //这里之后要在数据库里面也删除这些东西（搞定了），还有另一个界面的更新
             let message = messages[indexPath.row]
-            let query = LCQuery(className: "Packages")
+            let query = AVQuery(className: "Packages")
+            //let query = LCQuery(className: "Packages")
             
             
             //在leancloud中删除数据
-            query.whereKey("objectId", .equalTo(message.ID!))
-            query.find { result in
-                switch result {
-                case .success(let objects):
-                    let m = objects.first
-                    m?.delete()
-                    break
-                case .failure(let error):
-                    print(error)
-                }
-            }
+            query.whereKey("objectId", equalTo: message.ID!)
+            
+            query.findObjectsInBackground({ (objects, Error) in
+                let m = objects?.first as! AVObject
+                m.delete()
+            })
+            
             
             
             messages.remove(at: indexPath.row)
             
-//            //删除后保存数据
-//            saveMessages()
             
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
@@ -176,48 +171,7 @@ class PackageTableViewController: UITableViewController {
         tableView.reloadData()
         refreshControl?.endRefreshing()
     }
-//    //存储数据
-//    private func saveMessages() {
-//        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(messages, toFile: Message.ArchiveURL.path)
-//        
-//        if isSuccessfulSave {
-//            os_log("Messages are successful saved", log: .default, type: .debug)
-//        }
-//        else {
-//            os_log("Failed to save", log: .default, type: .error)
-//        }
-//        
-//    }
-//    
-//    //加载数据，可以return 一个 nil
-//    private func loadMessages() -> [Message]? {
-//        return NSKeyedUnarchiver.unarchiveObject(withFile: Message.ArchiveURL.path) as? [Message]
-//    }
-    
-//    private func loadMessages(){
-//        let query = LCQuery(className: "Packages")
-//        //读取到的数据无论是否接单的，都要有
-//        
-//        
-//        //发布的单的数量
-//        var counts = query.count().intValue
-//        //相当于一个保存了所有数据的数组
-//        var allMessages = query.find().objects!
-//        while (counts > 0) {
-//            //逐个读取
-//            let cloudMessage = allMessages.last
-//            allMessages.popLast()
-//            counts -= 1
-//            
-//            let message = self.cloudToLocal(message: cloudMessage!)
-//            
-//            let currentUser = LCUser.current!
-//            let founderPhone = currentUser.mobilePhoneNumber?.stringValue
-//            if (message?.founderPhone == founderPhone) {
-//                messages.append(message!)
-//            }
-//        }
-//    }
+
     private func loadMessages() {
         let query = AVQuery(className: "Packages")
         //读取到的数据无论是否接单的，都要有
@@ -242,31 +196,7 @@ class PackageTableViewController: UITableViewController {
         }
         
     }
-    //自己定义一个函数，把leancloud上的LCObject变成我本地的Message形式
-//    private func cloudToLocal(message: LCObject) -> Message? {
-        //狗屎，这个搞了半天
-//        let package = message.get("package")?.stringValue
-//        let describe = message.get("describe")?.stringValue
-//        let time = message.get("time")?.stringValue
-//        let remark = message.get("remark")?.stringValue
-//        
-//        
-//        
-//        let name = message.get("name")?.stringValue
-//        let phone = message.get("phone")?.stringValue
-//        let address = message.get("address")?.stringValue
-//        
-//        let founderPhone = message.get("founderPhone")?.stringValue
-//        
-//        let courierPhone = message.get("courierPhone")?.stringValue
-//        
-//        let ID = message.objectId
-//        let state = message.get("state")?.stringValue
-//        
-//        let message = Message(package: package, describe: describe, time: time, remark: remark, name: name, phone: phone, address: address, founderPhone: founderPhone!, founderAddress: "", courierPhone: courierPhone, courierAddress: "", photo: nil, ID: ID!, state: state)
-//        
-//        return message
-//    }
+
     //自己定义一个函数，把leancloud上的AVObject变成我本地的Message形式
     private func cloudToLocal(message: AVObject) -> Message? {
         let package = message.object(forKey: "package") as! String

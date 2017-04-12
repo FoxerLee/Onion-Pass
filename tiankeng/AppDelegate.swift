@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import LeanCloud
+//import LeanCloud
 import AVOSCloud
 
 @UIApplicationMain
@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        LeanCloud.initialize(applicationID: "yhCI2E99rNE3QykpJNJd67Qj-gzGzoHsz", applicationKey: "x1IIbS8vszyCpaQ8L8RbPPat")
+        //LeanCloud.initialize(applicationID: "yhCI2E99rNE3QykpJNJd67Qj-gzGzoHsz", applicationKey: "x1IIbS8vszyCpaQ8L8RbPPat")
         AVOSCloud.setApplicationId("yhCI2E99rNE3QykpJNJd67Qj-gzGzoHsz", clientKey: "x1IIbS8vszyCpaQ8L8RbPPat")
         
         UINavigationBar.appearance().barTintColor = UIColor.white

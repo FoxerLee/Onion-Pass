@@ -7,7 +7,8 @@
 //
 
 import UIKit
-import LeanCloud
+import AVOSCloud
+//import LeanCloud
 
 class ArriveTableViewController: UITableViewController {
 
@@ -53,15 +54,15 @@ class ArriveTableViewController: UITableViewController {
         else if (indexPath.section == 1) {
             let cell = tableView.dequeueReusableCell(withIdentifier: "FounderArriveTableViewCell", for: indexPath) as! FounderArriveTableViewCell
             
-            let query = LCQuery(className: "_User")
-            query.whereKey("mobilePhoneNumber", .equalTo(message.founderPhone))
-            var object = query.find().objects
-            let founder = object?.popLast()
+            let query = AVQuery(className: "_User")
+            query.whereKey("mobilePhoneNumber", equalTo: message.founderPhone)
+            var object = query.findObjects()
+            let founder = object?.popLast() as! AVObject
             
             
-            cell.founderNameLabel.text = founder?.get("username")?.stringValue
-            cell.founderPhoneLabel.text = founder?.get("mobilePhoneNumber")?.stringValue
-            cell.founderAddressLabel.text = founder?.get("address")?.stringValue
+            cell.founderNameLabel.text = founder.object(forKey: "username") as? String
+            cell.founderPhoneLabel.text = founder.object(forKey: "mobilePhoneNumber") as? String
+            cell.founderAddressLabel.text = founder.object(forKey: "address") as? String
             
             
             return cell

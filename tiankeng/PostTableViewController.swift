@@ -8,7 +8,7 @@
 
 import UIKit
 import os
-import LeanCloud
+//import LeanCloud
 import AVOSCloud
 
 class PostTableViewController: UITableViewController {
@@ -91,9 +91,9 @@ class PostTableViewController: UITableViewController {
         if let sourceViewController = sender.source as? ArriveTableViewController, let message = sourceViewController.message {
             
             message.state = "已送达"
-            let pk = LCObject(className: "Packages", objectId: message.ID!)
-            pk.set("state", value: message.state)
+            let pk = AVObject(className: "Packages", objectId: message.ID!)
             
+            pk.setValue(message.state, forKey: "state")
             
             pk.save()
             

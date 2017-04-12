@@ -7,7 +7,8 @@
 //
 
 import UIKit
-import LeanCloud
+//import LeanCloud
+import AVOSCloud
 import os.log
 
 class ConfirmTableViewController: UITableViewController {
@@ -52,15 +53,16 @@ class ConfirmTableViewController: UITableViewController {
         //寄货人的cell
         else if (indexPath.section == 1) {
             let cell = tableView.dequeueReusableCell(withIdentifier: "FounderConfirmTableViewCell", for: indexPath) as! FounderConfirmTableViewCell
-            let query = LCQuery(className: "_User")
-            query.whereKey("mobilePhoneNumber", .equalTo(message.founderPhone))
-            var object = query.find().objects
-            let founder = object?.popLast()
+            let query = AVQuery(className: "_User")
+            query.whereKey("mobilePhoneNumber", equalTo: message.founderPhone)
+            
+            var object = query.findObjects()
+            let founder = object?.popLast() as! AVObject
             
             
-            cell.founderNameLabel.text = founder?.get("username")?.stringValue
-            cell.founderPhoneLabel.text = founder?.get("mobilePhoneNumber")?.stringValue
-            cell.founderAddressLabel.text = founder?.get("address")?.stringValue
+            cell.founderNameLabel.text = founder.object(forKey: "username") as? String
+            cell.founderPhoneLabel.text = founder.object(forKey: "mobilePhoneNumber") as? String
+            cell.founderAddressLabel.text = founder.object(forKey: "address") as? String
                         
             return cell
         }
@@ -77,25 +79,7 @@ class ConfirmTableViewController: UITableViewController {
         }
     }
     
-//    //按下接单按钮后改变货物状态
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        super.prepare(for: segue, sender: sender)
-//        
-//        guard let button = sender as? UIBarButtonItem, button === confirmButton else{
-//            os_log("The confirm button was not pressed, canceiling", log:OSLog.default, type: .debug)
-//            return
-//        }
-//        let query = LCQuery(className: "Packages")
-//        let ID = message.ID!
-//        query.whereKey("objectId", .equalTo(ID))
-//        var object = query.find().objects
-//        let pk = object?.popLast()
-//        
-//        let state = "已接单"
-//        pk?.set("state", value: state)
-//        pk?.save()
-//                
-//    }
+
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if (section == 0) {
             return "货物信息"

@@ -8,7 +8,7 @@
 
 import UIKit
 import os.log
-import LeanCloud
+//import LeanCloud
 import AVOSCloud
 
 class CreateTableViewController: UITableViewController {
@@ -110,40 +110,6 @@ class CreateTableViewController: UITableViewController {
             return "收货人信息"
         }
     }
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
 
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -170,20 +136,7 @@ class CreateTableViewController: UITableViewController {
         
         pk.setObject(message.founderPhone, forKey: "founderPhone")
         pk.setObject(photo, forKey: "photo")
-        //pk.set("package", value: message.package)
-        //pk.set("describe", value: message.describe)
-        //pk.set("time", value: message.time)
-        //pk.set("remark", value: message.remark)
-        //
-//        //pk.set("state", value: message.state)
-//            
-//        pk.set("name", value: message.name)
-        //pk.set("phone", value: message.phone)
-        //pk.set("address", value: message.address)
-            
-        //pk.set("founderPhone", value: message.founderPhone)
-     //   pk.set("photo", value: photo)
-            
+                    
         pk.saveInBackground()
 
     }

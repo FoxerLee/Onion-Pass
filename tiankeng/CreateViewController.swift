@@ -8,7 +8,7 @@
 
 import UIKit
 import os.log
-import LeanCloud
+//import LeanCloud
 import AVOSCloud
 
 class CreateViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
@@ -92,10 +92,7 @@ class CreateViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         present(imagePickerController, animated: true, completion: nil)
         
     }
-    //取消按钮的相关
-//    @IBAction func cancel(_ sender: UIBarButtonItem) {
-//        dismiss(animated: true, completion: nil)
-//    }
+ 
     
     //Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

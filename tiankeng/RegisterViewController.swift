@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import LeanCloud
+//import LeanCloud
 import AVOSCloud
 import os
 
@@ -49,11 +49,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIImagePick
         //确保要全部输入
         if(!userNameText.isEmpty && !passwordText.isEmpty && !phoneText.isEmpty) {
             //将用户的用户名和密码放入数据库
-            //registerUser.username = LCString(userNameText)
-            //registerUser.password = LCString(passwordText)
-            //registerUser.mobilePhoneNumber = LCString(phoneText)
             
-            //registerUser.signUp()
             registerUser.username = userNameText
             registerUser.password = passwordText
             registerUser.mobilePhoneNumber = phoneText
