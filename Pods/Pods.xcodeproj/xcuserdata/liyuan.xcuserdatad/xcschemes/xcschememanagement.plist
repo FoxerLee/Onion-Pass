@@ -4,22 +4,22 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>AVOSCloud.xcscheme</key>
+		<key>AVOSCloud.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>AVOSCloudCrashReporting.xcscheme</key>
+		<key>AVOSCloudCrashReporting.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>AVOSCloudIM.xcscheme</key>
+		<key>AVOSCloudIM.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-tiankeng.xcscheme</key>
+		<key>Pods-tiankeng.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
