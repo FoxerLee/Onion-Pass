@@ -1,5 +1,7 @@
 # TIANKENG
 
+[![Build Status](https://travis-ci.org/linxiaowu66/douMiBlogPlatform.svg?branch=master)](https://travis-ci.org/FoxerLee/iOS_sitp)
+
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://github.com/FoxerLee/iOS_sitp/blob/master/license)
 
 
