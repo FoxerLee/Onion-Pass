@@ -53,6 +53,10 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIImagePick
             registerUser.username = userNameText
             registerUser.password = passwordText
             registerUser.mobilePhoneNumber = phoneText
+            let data = UIImagePNGRepresentation(iconImageView.image!)
+            let photo = AVFile.init(data: data!)
+            
+            registerUser.setObject(photo, forKey: "icon")
             
             
             registerUser.signUpInBackground({ (Bool, Error) in

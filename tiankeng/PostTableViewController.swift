@@ -93,7 +93,7 @@ class PostTableViewController: UITableViewController {
             message.state = "已送达"
             let pk = AVObject(className: "Packages", objectId: message.ID!)
             
-            pk.setValue(message.state, forKey: "state")
+            pk.setObject(message.state, forKey: "state")
             
             pk.save()
             

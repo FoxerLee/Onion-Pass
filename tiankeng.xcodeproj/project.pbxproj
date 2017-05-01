@@ -15,6 +15,7 @@
 		7A263C1A1E7F811200E7C8A2 /* CreateReceiverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A263C191E7F811200E7C8A2 /* CreateReceiverViewController.swift */; };
 		7A28C47F1E4B03F400A95045 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A28C47E1E4B03F400A95045 /* CreateViewController.swift */; };
 		7A28C4831E4C87EB00A95045 /* PackageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A28C4821E4C87EB00A95045 /* PackageTableViewCell.swift */; };
+		7A2D76401EB6DE1300390AD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A2D763F1EB6DE1300390AD3 /* Assets.xcassets */; };
 		7A3141961E6C3C160056BCEA /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A3141951E6C3C160056BCEA /* ExternalAccessory.framework */; };
 		7A3A47FC1E98C0E900B5D806 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3A47FB1E98C0E900B5D806 /* PhotoViewController.swift */; };
 		7A3A47FF1E98C80600B5D806 /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3A47FE1E98C80600B5D806 /* PhotoTableViewCell.swift */; };
@@ -40,7 +41,6 @@
 		7AD81E161E45945500D0BD28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD81E151E45945500D0BD28 /* AppDelegate.swift */; };
 		7AD81E181E45945500D0BD28 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD81E171E45945500D0BD28 /* ViewController.swift */; };
 		7AD81E1B1E45945500D0BD28 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AD81E191E45945500D0BD28 /* Main.storyboard */; };
-		7AD81E1D1E45945500D0BD28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AD81E1C1E45945500D0BD28 /* Assets.xcassets */; };
 		7AE72A7D1E9386AD0014E483 /* MineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE72A7C1E9386AD0014E483 /* MineTableViewController.swift */; };
 		7AEE84081E6FD9F900D606E4 /* OrderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE84071E6FD9F900D606E4 /* OrderTableViewController.swift */; };
 		7AEE840B1E6FDA2A00D606E4 /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE840A1E6FDA2A00D606E4 /* OrderTableViewCell.swift */; };
@@ -58,6 +58,7 @@
 		7A263C191E7F811200E7C8A2 /* CreateReceiverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateReceiverViewController.swift; sourceTree = "<group>"; };
 		7A28C47E1E4B03F400A95045 /* CreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
 		7A28C4821E4C87EB00A95045 /* PackageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PackageTableViewCell.swift; sourceTree = "<group>"; };
+		7A2D763F1EB6DE1300390AD3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A3141941E6C3C100056BCEA /* tiankeng.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = tiankeng.entitlements; sourceTree = "<group>"; };
 		7A3141951E6C3C160056BCEA /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		7A341C8C1E81060C007DCA63 /* tiankeng-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "tiankeng-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -86,7 +87,6 @@
 		7AD81E151E45945500D0BD28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7AD81E171E45945500D0BD28 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7AD81E1A1E45945500D0BD28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		7AD81E1C1E45945500D0BD28 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7AD81E211E45945500D0BD28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7AE72A7C1E9386AD0014E483 /* MineTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineTableViewController.swift; sourceTree = "<group>"; };
 		7AEE84071E6FD9F900D606E4 /* OrderTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderTableViewController.swift; sourceTree = "<group>"; };
@@ -272,8 +272,8 @@
 				7AE72A7B1E9386170014E483 /* mine */,
 				7AD81E191E45945500D0BD28 /* Main.storyboard */,
 				7AA42DD01E51515D007E6015 /* Message.swift */,
-				7AD81E1C1E45945500D0BD28 /* Assets.xcassets */,
 				7AD81E211E45945500D0BD28 /* Info.plist */,
+				7A2D763F1EB6DE1300390AD3 /* Assets.xcassets */,
 				7A341C8C1E81060C007DCA63 /* tiankeng-Bridging-Header.h */,
 			);
 			path = tiankeng;
@@ -373,7 +373,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7AD81E1D1E45945500D0BD28 /* Assets.xcassets in Resources */,
+				7A2D76401EB6DE1300390AD3 /* Assets.xcassets in Resources */,
 				7AD81E1B1E45945500D0BD28 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

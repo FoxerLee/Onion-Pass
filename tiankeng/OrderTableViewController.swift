@@ -69,12 +69,12 @@ class OrderTableViewController: UITableViewController {
             message.state = "已接单"
             let pk = AVObject(className: "Packages", objectId: message.ID!)
             
-            pk.setValue(message.state, forKey: "state")
+            pk.setObject(message.state, forKey: "state")
             //同时把接单人的电话保存起来
             let currentUser = AVUser.current()
             
             let postmanPhone = currentUser?.mobilePhoneNumber
-            pk.setValue(postmanPhone, forKey: "courierPhone")
+            pk.setObject(postmanPhone, forKey: "courierPhone")
             
             pk.save()
             
